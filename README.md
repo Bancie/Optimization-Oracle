@@ -1,7 +1,7 @@
-# Đề tài nghiên cứu
-Tối ưu tham số và Tối ưu nguyên
-## Phân chia công việc
-1. Thư
-2. Bằng
-3. Đức Anh
-4. Nam
+# Phân nội dung - Chương 1 - Cơ sở lý thuyết quy hoạch tuyến tính
+| Thành viên | Nội dung |
+|------------|----------|
+| Thư | Đơn hình (2 pha, M) |
+| Nam | Đối ngẫu |
+| ĐA | Đơn hình cải biên |
+| Bằng | Đơn hình đối ngẫu |
