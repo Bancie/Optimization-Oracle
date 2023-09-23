@@ -1,0 +1,38 @@
+"latex-workshop.latex.recipes": [
+ {
+  "name": "pdfLaTeX",
+  "tools": [
+   "pdflatex"
+  ]
+ },
+ {
+  "name": "latexmk 🔃",
+  "tools": [
+   "latexmk"
+  ]
+ },
+ {
+  "name": "xelatex",
+  "tools": [
+   "xelatex"
+  ]
+ },
+ {
+  "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+  "tools": [
+   "pdflatex",
+   "bibtex",
+   "pdflatex",
+   "pdflatex"
+  ]
+ },
+ {
+ "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+ "tools": [
+   "xelatex",
+   "bibtex",
+   "xelatex",
+   "xelatex"
+  ]
+ }
+]
