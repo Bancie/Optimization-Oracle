@@ -28,16 +28,16 @@
 \newtheorem{hq}{Hệ quả}
 \newtheorem{cy}{Chú ý}
 
+
 \title{Quy hoạch tuyến tính và cơ sở lý thuyết}
-\author{Nguyễn Chí Bằng, Đỗ Thư, Lê Đức Anh, Nguyễn Thành Nam}
-\date{\today}
+\author{Nguyễn Chí Bằng, Đỗ Thư, Lê Đức Anh, Nguyễn Thành Nam} 
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-This is an abstract of your article.
+Quy hoạch tuyến tính
 \end{abstract}
 
 \tableofcontents
@@ -57,7 +57,7 @@ This is an abstract of your article.
                                     x_j &\geq 0 , j = \overline{\rm 1,n} \\
                                 \end{split}
                             \end{equation}
-                        Từ đó ta xét BT có ẩn giả tạo sau (gọi là BTM)
+                        Từ đó ta xét BT có ẩn giả tạo sau (gọi là BTM) \eqref{**}
                             \begin{equation} \label{**}
                                 \begin{split}
                                     Min \: \sum_{j=1}^n c_jx_j+M \\
@@ -257,9 +257,116 @@ This is an abstract of your article.
             \subsubsection{Phương pháp đơn hình đối ngẫu}
                 \begin{enumerate}
                     \item \textbf{Giới thiệu} \\
+                        Trong thực tế, việc giải một bài toán bằng thuật toán đơn hình ban đầu cho ta mội giải pháp tối ưu nhưng không khả thi. Trong trường hợp này, thuật toán đơn hình đối ngẫu cung cấp cho ta một giải pháp khả thi bằng cách điều chỉnh phương án thông qua $\overline{\rm b}_r$ sao cho $\overline{\rm b}_r \geq 0$ trong khi đó với thuật toán đơn hình, ta tập trung vào $\overline{\rm c}_s$ sao cho $\overline{\rm c}_s < 0$. Trong khi vẫn giữ được tính khả thi.
                     \item \textbf{Nội dung} \\
-                \end{enumerate}
+                        Cho bài toán dạng chính tắc
+                        \begin{equation}
+                            \begin{split}
+                                Min \: c^Tx &= z\\
+                                Ax &= b,\\ 
+                                x &\geq 0,
+                            \end{split}
+                        \end{equation}        
+                        Như ta thấy, sau quá trình biến đổi với thuật toán đơn hình ta luôn nhận được một hệ phương trình với các biến cơ sở $-z, x_1, x_2, \ldots , x_m$.
+                        \begin{center}
+                            \begin{tabular} {ccccccccccc}
+                                $-z$ &&&&& $+\overline{\rm c}_{m+1}x_{m+1}+$ & $\ldots$ & $+ \overline{\rm c}_jx_j$ & $\ldots$ & $+ \overline{\rm c}_nx_n$ & $= -\overline{\rm z}_0$ \\
+                                & $x_1$ &&&& $+\overline{\rm a}_{1,m+1}x_{m+1}+$ & $\ldots$ & $+ \overline{\rm a}_{1j}x_j$ & $\ldots$ & $+ \overline{\rm a}_{1n}x_n$ & $= \overline{\rm b}_1$ \\                            
+                                && $x_2$ &&& $+\overline{\rm a}_{2,m+1}x_{m+1}+$ & $\ldots$ & $+ \overline{\rm a}_{2j}x_j$ & $\ldots$ & $+ \overline{\rm a}_{2n}x_n$ & $= \overline{\rm b}_2$ \\                            
+                                &&& $\ddots$ && $\vdots$ && $\vdots$ && $\vdots$ & $\vdots$ \\
+                                &&&& $x_m$ & $+\overline{\rm a}_{m,m+1}x_{m+1}+$ & $\ldots$ & $+ \overline{\rm a}_{mj}x_j$ & $\ldots$ & $+ \overline{\rm a}_{mn}x_n$ & $= \overline{\rm b}_m,$ \\ 
+                            \end{tabular}
+                        \end{center}
+                        Với $x_B=(x_1,x_2,\ldots,x_m)^T$ và $x_N=(x_{m+1},x_{m+2},\ldots,x_n)^T$, Hệ phương trình được viết lại dưới dạng:
+                        \begin{equation}
+                            \begin{split}
+                                (-z) + \overline{\rm c}x_N &= -\overline{\rm z}_0 \\
+                                Ix_B + \overline{\rm A}x_N &= \overline{\rm b},
+                            \end{split}
+                        \end{equation}     
+                Hoặc dưới dạng ma trận, hệ có thể viết lại thành:
+                \begin{gather}
+                    \begin{pmatrix} 
+                        1 & 0 & \overline{\rm c} \\
+                        0 & I & \overline{\rm A} \\
+                    \end{pmatrix}
+                    \begin{pmatrix}
+                        -z \\
+                        x_{B} \\
+                        x_{N} \\
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        - \overline{\rm z}_0 \\
+                        \overline{\rm b}
+                    \end{pmatrix}
+                    ,
+                \end{gather}
+                Từ đây, ta xét dạng đối ngẫu của bài toán
+                \begin{equation}
+                    \begin{split}
+                        Max \: b^T\pi &= v\\
+                        A^T\pi & \le c,\\
+                    \end{split}
+                \end{equation}
+                Với các ẩn giả được thêm vào ta viết lại
+                \begin{equation}
+                    \begin{split}
+                        Max \: b^T\pi &= v\\
+                        A^T\pi +Iy &= c,\\
+                        y \geq 0
+                    \end{split}
+                \end{equation}
+                Xét mối quan hệ giữ bài toán dạng chính tắc và dạng đối ngẫu của nó ta có cái mối tương quan như bảng trên.
+                \begin{figure} \label{MQH}
+                    \caption{Mối quan hệ giữa bài toán gốc và bài toán đối ngẫu}
+                        \begin{center}
+                            \begin{tabular} {|c|c|c|}
+                                \hline
+                                & Bài toán gốc & Bài toán đối 
+                                ngẫu \\
+                                \hline
+                                Cơ sở & $B$ & $\overline{\rm B} =
+                                \begin{pmatrix}
+                                    B^T & 0 \\
+                                    N^T & I_{n-m}
+                                \end{pmatrix}$ \\
+                                \hline
+                                Biến cơ sở & $x_B$ & $\pi,y_N=\overline{\rm c}_N$ \\
+                                \hline
+                                Biến không cơ sở & $x_N$ & $y_B=\overline{\rm c}_B$ \\
+                                \hline
+                                Điều kiện & $Ax=b,x \geq 0$ & $\overline{\rm c} \geq 0$ \\
+                                \hline
+                            \end{tabular}
+                        \end{center}
+                    \end{figure}
 
+                Ta có thể thấy cột cơ sở và không cơ sở của bài toán dạng đối ngẫu lần lượt được ký hiệu là $\overline{\rm B}$ và $\overline{\rm N}$.
+                \begin{gather}
+                    \overline{\rm B} =
+                        \begin{pmatrix}
+                            B^T & 0 \\
+                            N^T & I_{n-m}
+                        \end{pmatrix}
+                        ,
+                \end{gather}
+                \begin{gather}
+                    \overline{\rm N}=
+                        \begin{pmatrix}
+                            I_m \\
+                            0
+                        \end{pmatrix}
+                        ,
+                \end{gather}
+                \textbf{Thuật toán đơn hình đối ngẫu gồm các bước sau:} \\
+                    \textbf{Bước 1 (Chọn cơ sở vào)} \\
+                        Nếu $\overline{\rm b}_r=min \: \overline{\rm b}_i < 0$, chọn $x_r$ tương đương với hàng $r$. \\
+                    \textbf{Bước 2 (Chọn cơ sở ra)} \\
+                        Nếu $\frac{\overline{\rm c}_s}{-\overline{\rm a}_{rs}}=min \: \frac{\overline{\rm c}_j}{-\overline{\rm a}_{rj}} \geq 0$ trong đó $\overline{\rm a}_{rj} > 0$, loại bỏ $x_s$ tương ứng với cột $s$. \\
+                    \textbf{Bước 3 (Kiểm tra)} \\
+                        Xoay vòng theo $\overline{\rm a}_{rs}$ để xác định một giải pháp khả thi mới, đặt $j_r=s$ và quay lại bước 1.
+                \end{enumerate}
 \section{Bài toán đối ngẫu}
     \subsection{Giới thiệu}
         Trong Lý thuyết tối ưu,với một bài toán tối ưu cho trước, người ta quan tâm làm sao thiết lập được bài toán liên kết với bài toán đã cho mà khi giải bài toán này ta thu được thông tin về bài toán ban đầu. Đó chíng là bài toán đối ngẫu. \\
@@ -435,167 +542,6 @@ This is an abstract of your article.
                 $$\text{Nếu } x_j^* > 0 \text{ thì } \sum_{i=1}^ma_{ij}y_i^*=c_j \text{ hoặc}$$ \\
                 $$\text{Nếu } \sum_{i=1}^ma_{ij}y_i^* < c_j \text{ thì } x_j^*=0$$
             \end{dl}
-    \subsection{Ví dụ minh hoạ}
-
-\section{Bài toán phân phối}
-    \subsection{Giới thiệu}
-        Vấn đề về tìm phương án phân phối tối ưu đã được tìm kiếm từ lâu, điển hình là bài báo của Hitchcock về bài toán vận tải vào năm 1941. Vào năm 1946, Để tìm cách lập kế hoạch tối ưu cho không quân Hoa Kỳ, D. Hitchcock và M. Wood cùng George Dantzig đã tìm ra kỹ thuật tốt hơn cho vấn đề phân phối. G.Dantzig đã đến đại học Chicago để tìm đến Koopmans lúc này là một nhà toán kinh tế với mong muốn tìm thấy cách xử lý, lúc này Koopmans đang thực hiện nhiệm vụ tương tự về tàu vận chuyển đồng minh trong thời kỳ chiến tranh thế giới thứ II vào năm 1947, sau đó 30-34 năm Koopmans cùng đồng sự đã nhận giải Nobel cho mô hình nghiên cứu của họ. \\
-        Mở rộng từ mô hình nổi tiếng mang tên Input-ouput của Wassily Leontief, G.Dantzig nhận thấy mô hình của không quân Hoa Kỳ là một mô hình động và vì thế, có thể tìm được cách tính với thuật toán đơn hình. Nhưng lúc bấy giờ dữ liệu lớn lúc này lại là một vấn đề, nhưng sự kiện lịch sử lớn xảy ra mang tên Automata, máy tính được ra đời và nổi bậc nhất thời điểm đó là cỗ máy ENIAC có thể xử lý 5,000 phép tính trong một giây. Nhờ đó đã giúp cho mô hình về phân phối và nói riêng và toán học tối ưu nói chung đã có những đột phá vượt bậc, chứng minh loài người có khả năng đối mặt với những vấn đề phức tạp một cách tuyệt vời.
-    \subsection{Cơ sở lý thuyết}
-        \subsubsection{Tính chất}
-            \begin{enumerate}
-                \item \textbf{mô hình toán học}\\
-                Ta có $m$ nơi phát và $n$ nơi thu với $a_i$ là lượng hàng phát đi $i=1,2,\ldots,m$, $b_j$ lượng hàng nhận. Cước phí vận chuyển một đơn vị hàng từ $i$ đến $j$ là $c_{ij}$. Tổng hàng phát bằng tổng hàng nhận, ta có thể lập kế hoạch vận chuyển hàng tiết kiệm chi phí tối thiểu.
-                    \begin{equation}
-                        \begin{split}
-                            \text{Min } c^Tx \\
-                            Ax&=b \\
-                            x& \le 0 \\
-                            A : \: & m \times n
-                        \end{split}
-                    \end{equation}
-        Với điều kiện tổng thu bằng với tổng phát
-                    \begin{equation}
-                        \begin{split}
-                            \sum_{i=1}^m a_i = \sum_{j=1}^n b_j = T \\
-                            a_i , b_j \le 0
-                        \end{split}
-                    \end{equation}
-        Với $x_{ij}$ là số lượng một đơn vị hàng phát từ $i$ đến $j$. Từ đây ta có thể tổng quát hoá bài toán như sau
-                    \begin{equation}
-                        \begin{split} 
-                            \text{Min} \sum_{i=1}^m \sum_{j=1}^n c_{ij} x_{ij} & = z \\
-                            \sum_{j=1}^n x_{ij} &= a_i , \: i=1, \ldots ,m \\
-                            \sum_{i=1}^m x_{ij} &= b_j , \: j=1, \ldots ,n \\
-                            x_{ij} &\le 0 \:\:\:\: i=1,...,m \: ; \: j=1,...,n
-                        \end{split}
-                    \end{equation}
-        Mô hình dưới sẽ giúp ta dễ hình dung hơn mô hình về bài toán phân phối
-                    \begin{flushleft}
-                        \setlength{\tabcolsep}{1pt}
-                        \begin{tabular} { cccccccccccccc }
-                            $x_{11}$ & $+x_{12}$ & $+ \ldots $ &$+ x_{1n}$ &&&&&&&&&& $= a_1$ \\
-                            &&&& $x_{21}$ & $+x_{22}$ & $+ \ldots $ &$+ x_{2n}$ &&&&&& $= a_2$ \\
-                            &&&&&&&& $\ddots$ &&&&& $\vdots$ \\
-                            &&&&&&&&& $x_{m1}$ & $+x_{m2}$ & $+ \ldots $ &$+ x_{mn}$ & $= a_m$ \\
-                            $x_{11}$ &&&& $+x_{21}$ &&&&& $+x_{m1}$ &&&& $= b_1$ \\
-                            & $x_{12}$ &&&& $+x_{22}$ &&&&& $+x_{m2}$ &&& $= b_2$ \\
-                            && $\ddots$ &&&& $\ddots$ &&&&& $\ddots$ && $\vdots$ \\
-                            &&& $x_{1n}$ &&&& $+x_{2n}$ &&&&& $+x_{mn}$ & $= b_n$ \\
-                        \end{tabular}
-                    \end{flushleft}
-                    \begin{figure}
-                        \caption{Dạng bảng của mô hình}
-                    \begin{center}
-                        \begin{tabular} { |cc|cc|cc|cc|cc| }
-                            \hline
-                            $x_{11}$ && $x_{12}$ && $x_{1j}$ && $x_{1n}$ && $a_1$ & \\
-                            & $c_{11}$ && $c_{12}$ && $c_{1j}$ && $c_{1n}$ && $u_1$ \\
-                            \hline
-                            $x_{21}$ && $x_{22}$ && $x_{2j}$ && $x_{2n}$ && $a_2$ & \\
-                            & $c_{21}$ && $c_{22}$ && $c_{2j}$ && $c_{2n}$ && $u_2$ \\
-                            \hline
-                            $x_{i1}$ && $x_{i2}$ && $x_{ij}$ && $x_{in}$ && $a_i$ & \\
-                            & $c_{i1}$ && $c_{i2}$ && $c_{ij}$ && $c_{in}$ && $u_i$ \\
-                            \hline
-                            $x_{m1}$ && $x_{m2}$ && $x_{mj}$ && $x_{mn}$ && $a_m$ & \\
-                            & $c_{m1}$ && $c_{m2}$ && $c_{mj}$ && $c_{mn}$ && $u_m$ \\
-                            \hline
-                            $b_1$ && $b_2$ && $b_j$ && $b_m$ &&& \\
-                            & $v_1$ && $v_2$ && $v_j$ && $v_m$ && \\
-                            \hline
-                        \end{tabular}
-                    \end{center}
-                    \end{figure}
-        \item[$\blacksquare$] \textbf{Mối liên kết với ma trận tam giác}
-                    \begin{align*}
-                        D =
-                        \begin{bmatrix}
-                            1 & 0 && 0 & 1 & 1 & \ldots & 1 \\
-                            & 1 &&&&&& \\
-                            && \ddots &&&&& \\
-                            &&& 1 &&&& \\
-                            &&&& 1 &&& \\
-                            & 0 &&&& 1 && \\
-                            &&&&&& \ddots & \\
-                            &&&&&&& 1 \\
-                        \end{bmatrix}
-                    \end{align*}
-            \end{enumerate}
-        \subsubsection{Phương án xuất phát}
-            \begin{enumerate}
-                \item \textbf{Góc Tây - Bắc}
-                \item \textbf{Cước phí bé nhất}
-                \item \textbf{Phương pháp Vogel}
-            \end{enumerate}
-        \subsubsection{Điều chỉnh phương án}
-            \begin{enumerate}
-                \item \textbf{Nhân tử đơn hình}
-                    \begin{gather}
-                        \begin{pmatrix} 
-                            1 & 0 & \overline{\rm c} \\
-                            0 & I & \overline{\rm A} \\
-                        \end{pmatrix}
-                        \begin{pmatrix}
-                            -z \\
-                            x_{B} \\
-                            x_{N} \\
-                        \end{pmatrix}
-                        =
-                        \begin{pmatrix}
-                            - \overline{\rm z_{0}} \\
-                            \overline{\rm b}
-                        \end{pmatrix}
-                    \end{gather}
-
-                    \begin{equation}
-                        \begin{split}
-                            (-z) + c^T_B x_B + c^T_N x_N &= 0 \\
-                            B x_B + N x_N &= b
-                        \end{split}
-                    \end{equation}
-
-                    \begin{equation}
-                        \begin{tabular} {cccccc}
-                            $(-z)$ &&$+$& $(c^T_N - c^T_B B^{-1} N) x_N$ &$=$& $-c^T_B B^{-1} b$ \\
-                            & $Ix_B$ &$+$& $B^{-1} N x_N$ &$=$& $B^{-1}b$
-                        \end{tabular}
-                    \end{equation}
-
-                    \begin{equation}
-                        \varphi^T = c^T_B B^{-1}
-                    \end{equation}
-
-                    \begin{equation}
-                        \begin{tabular} {cccccc}
-                            $(-z)$ &&$+$& $(c^T_N - \varphi^T N) x_N$ &$=$& $-\varphi^T b$ \\
-                            & $Ix_B$ &$+$& $B^{-1} N x_N$ &$=$& $B^{-1}b$
-                        \end{tabular}
-                    \end{equation}
-
-                    \begin{equation}
-                        \begin{split}
-                        c_{ij} = u_{i} + v_{j} \\
-                        \text{trong đó } x_{ij}& \text{ là một cơ sở}
-                        \end{split}
-                    \end{equation}
-                    
-                    \begin{equation}
-                        \sum_{i=1}^m \sum_{j=1}^n \overline{\rm c_{ij}} x_{ij} = z - z_0
-                    \end{equation}
-
-                    \begin{equation}
-                        \begin{split}
-                        \overline{\rm c_{ij}} &= c_{ij} - (u_i + v_j) \\
-                        z_0 &= \sum_{i=1}^m a_i u_i + \sum_{j=1}^n b_j v_j
-                        \end{split}
-                    \end{equation}
-                \item \textbf{Điều chỉnh phương án}
-            \end{enumerate}
-        \subsubsection{Tiêu chuẩn tối ưu}
-            \begin{equation}
-                c_{rs} - u_r - v_s = min \: (c_{ij} - u_i - v_j) < 0
-            \end{equation}
     \subsection{Ví dụ minh hoạ}
 
 \section{Tài liệu tham khảo}
