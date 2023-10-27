@@ -1,7 +1,9 @@
 \documentclass{beamer}
+\setbeamertemplate{bibliography item}{}
 \usepackage[utf8]{vietnam}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{natbib}
 \usetheme{Warsaw}
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
@@ -73,12 +75,12 @@ NGÀNH: TOÁN ỨNG DỤNG}}
     \item Bài toán tối ưu áp dụng trong tin học.
     \end{itemize}
 \end{frame}
-
-\begin{frame}{Bài toán dẫn đến mục đích nghiên cứu}
+%bo
+\begin{frame}{Ví dụ}
     Một công ty cần sản xuất 2 dòng xe máy để đưa ra thị trường. Biết rằng với dòng xe thứ nhất cần 2 \$ cho phụ tùng và 1 \$ cho chi phí thuê nhân công. Đối với dòng xe thứ hai chi phí lần lượt chia cho phụ tùng và thuê nhân công là 1 \$ và 3 \$ cho mỗi sản phẩm. Được biết tổng vốn đầu tư của công ty sẽ bỏ ra theo kế hoạch là 8 \$ cho phụ tùng và 10 \$ cho nhân công. Hãy tìm ra phương án đầu tư để đạt được lợi nhuận cao nhất với lợi nhận của dòng xe thứ nhất là 2 \$ 1 sản phẩm và dòng thứ hai là 2 \$.
 \end{frame}
-
-\begin{frame}{Bài toán dẫn đến mục đích nghiên cứu}
+%bo
+\begin{frame}{Ví dụ}
     \begin{center}                    
         \big(P\big)\quad $f(x)=2x_1+2x_2\quad \longrightarrow Max$\\
         \[\left\{\begin{aligned}
@@ -87,28 +89,41 @@ NGÀNH: TOÁN ỨNG DỤNG}}
             &x_i\geq 0,\forall i=1,2
         \end{aligned}\right.\]\\
         \end{center}  
-        Ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$ và lợi nhận nhận được là $10.4$.    
+        Ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$ và lợi nhuận nhận được là $10.4$.    
   
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{center}
+        \begin{figure}[ht]
+            \begin{center}
+
+            \includegraphics[width=0.7\linewidth]{/Users/chibangnguyen/Documents/GitHub/NCKH/BAOCAO/Nhom1_hinh.pdf}
+            
+            Hình minh hoạ bài toán
+            \end{center}
+      \end{figure}
+      \end{center}
 \end{frame}
 \section{Nội dung nghiên cứu}
 \begin{frame}{Nội dung nghiên cứu}
     \begin{itemize}
     \item Hệ thống lại cơ sở lý thuyết và phương pháp giải các bài toán Quy hoạch tuyến tính.
-    \item Từ đó mở rộng để tìm nghiệm nguyên cho bài toán, thông qua 2 phương pháp:
+    \item Từ đó mở rộng để tìm nghiệm nguyên cho bài toán tối ưu nguyên, thông qua 2 phương pháp:
     \begin{itemize}
     \item Phương pháp Gomory.
     \item Phương pháp Land-Doig.
     \end{itemize}
     \end{itemize}
 \end{frame}
-\section{Dự kiến luận văn}
-\begin{frame}{Dự kiến luận văn}
+\section{Dự kiến nội dung đề tài}
+\begin{frame}{Dự kiến nội dung đề tài}
     \begin{itemize}
     \item Chương 1:  Bao gồm các kiến thức chuẩn bị, nội dung có liên quan đến
     một số kiến thức cơ bản của quy hoạch tuyến tính để dùng
     làm cơ sở nghiên cứu về các phương pháp giải của bài toán quy hoạch nguyên.
     \item Chương 2: Tìm hiểu về các phương pháp và thuật giải giúp giải quyết bài toán quy hoạch nguyên bằng phương pháp Gomory và phương pháp Land-Doig.
-    \item Chương 3: Nghiên cứu xoay quanh những vấn đề và ứng dụng có liên quan đến bài toán Quy hoạch nguyên. Trong đó có 3 bài toán quan trọng cần quan tâm:
+    \item Chương 3: Một số áp dụng của bài toán tối ưu nguyên vào các bài toán cụ thể. Trong đó có 3 bài toán quan trọng cần quan tâm:
     \begin{itemize}
         \item Bài toán cái túi.
         \item Bài toán người du lịch.
@@ -117,38 +132,40 @@ NGÀNH: TOÁN ỨNG DỤNG}}
     \end{itemize}   
 \end{frame}
 \section{Tổ chức và phân công}
-\begin{frame}{Tổ chức và phân công}
+\begin{frame}[shrink=20]
+    \frametitle{Tổ chức và phân công}
+    \vspace{2cm}
     \begin{table}
-        \begin{tabular}{|c|c|}
+        \begin{tabular}{|c|c|c|}
             \hline
-            Họ và tên & Nội dung \\
+            Nội dung & Người phụ trách chính & Người cộng tác \\
             \hline \hline
-            Đỗ Ngọc Minh Thư & Nghiên cứu về tối ưu tuyến tính nguyên. \\
-            Nguyễn Chí Bằng & Nghiên cứu về tối ưu tuyến tính nguyên. \\
+            Cơ sở lý thuyết quy hoạch tuyến tính & Đỗ Ngọc Minh Thư & \\
+            & Nguyễn Chí Bằng & \\
+            \hline
+            Phương pháp Gomory & Đỗ Ngọc Minh Thư & Nguyễn Chí Bằng \\
+            \hline
+            Phương pháp Land-Doig & Nguyễn Chí Bằng & Đỗ Ngọc Minh Thư \\
+            \hline
+            Các bài toán ứng dụng & Đỗ Ngọc Minh Thư & \\
+            & Nguyễn Chí Bằng & \\
             \hline
         \end{tabular}
     \end{table}
 \end{frame}
 \section{Tiến độ thực hiện}
-\begin{frame}[shrink=25]
-    \frametitle{Tiến độ thực hiện}
-    \vspace{2cm}
-    \begin{table}
-        \begin{tabular}{|c|c|c|}
-            \hline
-            Công việc thực hiện & Thời gian & Người thực hiện \\
-            \hline \hline
-            Nghiên cứu tối ưu tuyến tính nguyên. & 1/8/2023 - 1/4/2024 & Đỗ Ngọc Minh Thư \\
-            Nghiên cứu tối ưu tuyến tính nguyên. & 1/8/2023 - 1/4/2024 & Nguyễn Chí Bằng \\
-            \hline
-        \end{tabular}
-    \end{table}
+\begin{frame}{Tiến độ thực hiện}
+Thời gian nghiên cứu chia làm 3 giai đoạn:
+\begin{itemize}
+\item Giai đoạn 1 (? tháng): Đọc, hiểu tài liệu liên quan đến lý thuyết tối ưu tuyến tính nguyên và các phương pháp giải.
+\item Giai đoạn 2 (3 tháng): Thu hoạch, hệ thống lại các tri thức và viết luận văn.
+\item Giai đoạn 3 (1 tháng): Hoàn thành và bảo vệ luận văn.
+\end{itemize}
 \end{frame}
 \section{Tài liệu dùng cho nghiên cứu}
 \begin{frame}[allowframebreaks]
     \frametitle{Tài liệu dùng cho nghiên cứu}
-    \bibliographystyle{amsalpha}
+    \tiny{\bibliographystyle{abbrv} }
     \bibliography{tailieunc}
 \end{frame}
 \end{document}
-
