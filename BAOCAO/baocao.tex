@@ -3,33 +3,62 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usetheme{Warsaw}
-\title{TỐI ƯU TUYẾN TÍNH NGUYÊN}
-\subtitle{PGS. TS Tạ Quang Sơn}
-\author{Đỗ Ngọc Minh Thư \\ Nguyễn Chí Bằng}
-\institute{Khoa Toán Ứng dụng \\ Trường Đại học Sài Gòn}
-\date{\today}
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+%\usepackage{enumitem}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+%kt
+\mode<presentation>
+{
+ \usetheme{Darmstadt}
+%\usetheme{Rochester}
+}
+\beamertemplatetransparentcoveredhigh
 
 \begin{document}
+\title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE   Phương pháp giải bài toán \\Tối ưu tuyến tính nguyên}\\
+------------------------------------------
 
-\begin{frame}
-\titlepage
-\end{frame}
-
+{\small Hướng dẫn: PGS.TS. Tạ Quang Sơn}} 
+\author[]{\bf Thực hiện : ĐỖ NGỌC MINH THƯ \& NGUYỄN CHÍ BẰNG \\
+Sinh viên lớp: DTU1221, Khóa: 22}
+\institute[Báo cáo luận văn thạc sĩ]{\fontsize{2pt}{2pt}}%
+\small{\date{\today}}
 \begin{frame}
 \begin{center}
-{\huge BUỔI XÉT DUYỆT ĐỀ TÀI}
-\\[2\baselineskip]
-\textbf{THÀNH VIÊN HỘI ĐỒNG}
-
-TS. Nguyễn Văn Huấn
-
-PGS. TS. Võ Hoàng Hưng
-
-TS. Lương Duy Bình
+{\fontsize{8pt}{8pt}\selectfont \bf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\\
+TRƯỜNG ĐẠI HỌC SÀI GÒN}}
 \end{center}
+\begin{center}
+\end{center}
+
+\begin{center}
+{\fontsize{10pt}{6pt}\selectfont \bf{BÁO CÁO ĐỀ CƯƠNG NGHIÊN CỨU KHOA HỌC\\
+NGÀNH: TOÁN ỨNG DỤNG}}
+\end{center}
+\titlepage
 \end{frame}
-
-
 \begin{frame}
     \frametitle{NỘI DUNG BÁO CÁO}
     \tableofcontents
@@ -45,6 +74,9 @@ TS. Lương Duy Bình
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Bài toán dẫn nhập}
+    Một công ty cần sản xuất 2 dòng xe máy để đưa ra thị trường. Biết rằng với dòng xe thứ nhất cần 8 \$ cho phụ tùng và 5 \$ cho chi phí thuê nhân công. Đối với dòng xe thứ hai chi phí lần lượt chia cho phụ tùng và thuê nhân công là 6 \$ và 7 \$ cho mỗi sản phẩm. Được biết tổng vốn đầu tư của công ty sẽ bỏ ra theo kế hoạch là 1200 \$ cho phụ tùng và 2000 \$ cho nhân công. Hãy tìm ra phương án đầu tư để đạt được lợi nhuận cao nhất với lợi nhận của dòng xe thứ nhất là 10 \$ 1 sản phẩm và dòng thứ hai là 7 \$.
+\end{frame}
 \section{Nội dung nghiên cứu}
 \begin{frame}{Nội dung nghiên cứu}
     \begin{itemize}
@@ -59,17 +91,11 @@ TS. Lương Duy Bình
 \section{Dự kiến luận văn}
 \begin{frame}{Dự kiến luận văn}
     \begin{itemize}
-    \item Chương 1. Quy hoạch tuyến tính và cơ sở lý thuyết
-    \begin{itemize}
-        \item Các thuật toán đơn hình.
-        \item Dạng đối ngẫu.
-    \end{itemize}
-    \item Chương 2. Quy hoạch nguyên
-    \begin{itemize}
-        \item Phương pháp Gomory.
-        \item Phương pháp Land-Doig.
-    \end{itemize}
-    \item Chương 3. Vấn đề và ứng dụng của Quy hoạch nguyên
+    \item Chương 1:  Bao gồm các kiến thức chuẩn bị, nội dung có liên quan đến
+    một số kiến thức cơ bản của quy hoạch tuyến tính để dùng
+    làm cơ sở nghiên cứu về các phương pháp giải của bài toán quy hoạch nguyên.
+    \item Chương 2: Tìm hiểu về các phương pháp và thuật giải giúp giải quyết bài toán quy hoạch nguyên bằng phương pháp Gomory và phương pháp Land-Doig.
+    \item Chương 3: Nghiên cứu xoay quanh những vấn đề và ứng dụng có liên quan đến bài toán Quy hoạch nguyên. Trong đó có 3 bài toán quan trọng cần quan tâm:
     \begin{itemize}
         \item Bài toán cái túi.
         \item Bài toán người du lịch.
