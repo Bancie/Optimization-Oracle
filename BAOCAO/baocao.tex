@@ -3,7 +3,7 @@
 \usepackage[utf8]{vietnam}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{natbib}
+\setbeamertemplate{bibliography item}[book]
 \usetheme{Warsaw}
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
@@ -71,7 +71,8 @@ NGÀNH: TOÁN ỨNG DỤNG}}
 \begin{frame}{Mục đích nghiên cứu}
     Tối ưu tuyến tính là một nội dung quan trọng trong chương trình đào tạo Cử nhân Toán ứng dụng. Lý thuyết về việc giải bài toán tối ưu tuyến tính đã được cung cấp cho sinh viên. Tuy vậy, có nhiều bài toán tối ưu cần được giải với nghiệm nguyên. Chẳng hạn như:
     \begin{itemize}
-    \item Bài toán tối ưu nhân lực vận chuyển hàng hóa.
+    \item Bài toán tối ưu nhân lực.
+    \item Bài toán tối ưu vận chuyển hàng hóa.
     \item Bài toán tối ưu áp dụng trong tin học.
     \end{itemize}
 \end{frame}
@@ -154,7 +155,8 @@ NGÀNH: TOÁN ỨNG DỤNG}}
             \hline
             \textbf{Chương 3} && \\
             \hline
-            Các bài toán ứng dụng & Đỗ Ngọc Minh Thư & \\
+            Một số áp dụng vào các bài
+            toán cụ thể & Đỗ Ngọc Minh Thư & \\
             & Nguyễn Chí Bằng & \\
             \hline
         \end{tabular}
@@ -170,9 +172,17 @@ Thời gian nghiên cứu chia làm 3 giai đoạn:
 \end{itemize}
 \end{frame}
 \section{Tài liệu dùng cho nghiên cứu}
-\begin{frame}[allowframebreaks]
-    \frametitle{Tài liệu dùng cho nghiên cứu}
-    \tiny{\bibliographystyle{abbrv} }
-    \bibliography{tailieunc}
+\begin{frame}[allowframebreaks]{Tài liệu dùng cho nghiên cứu}
+    \scriptsize
+    \begin{thebibliography}{}
+        \bibitem{paper1} Tạ Quang Sơn, \textit{Bài giảng Quy hoạch tuyến tính}, Đại học Sài Gòn, 2023.
+        \bibitem{paper2} Bùi Thế Tâm, \textit{Quy hoạch rời rạc}, Hà Nội, 10-2008.
+        \bibitem{paper3} Michele Conforti, Gerard Cornuejols, and Giacomo Zambelli. \textit{Integer Programming}. Springer Publishing Company, Incorporated, 2014.
+        \bibitem{paper4} G.B. Dantzig and M.N. Thapa. \textit{Linear Programming 2: 2: Theory and Extensions}. Linear Programming. Springer, 1997.
+        \bibitem{paper5} George B. Dantzig and Mukund Narain Thapa. \textit{Linear Programming 1: Introduction}. Springer Series in Operations Research and Financial Engineering. Springer, New York, 1997.
+        \bibitem{paper6} Ailsa H Land and Alison G Doig. \textit{An automatic method for solving discrete programming problems}. Springer, 2010.
+        scriptsize
+        \bibitem{paper7} GOMORY, R. E.: \textit{"Outline of an Algorithm for Integer Solutions to Linear Programs,"} Bulletin of the American Mathematical Society, 64, (1958), pp. 275-8.
+    \end{thebibliography}
 \end{frame}
 \end{document}
