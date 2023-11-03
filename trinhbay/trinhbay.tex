@@ -64,7 +64,12 @@
         \end{aligned}\right.\]\\
     \end{center}
     \begin{itemize}
-    \item Trong đó $c^T=[c_1 \: c_2 \: \ldots \: c_n]$, $A$ là ma trận $m\times n$, $ \begin{align}\begin{split} b=[b_1 \ldots b_m] \end{split}\end{align}$, và $x\in Z^n$.
+    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, và $x\in Z^n$.
     \item Bài toán $(H)$ gọi là bài toán \textit{quy hoạch nguyên hoàn toàn.}
     \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán quy hoạch nguyên hoàn toàn.
     \end{itemize}
@@ -80,8 +85,12 @@
         \end{aligned}\right.\]\\
     \end{center}
     \begin{itemize}
-    \item Trong đó $c=(c_1,\ldots,c_n)$, $h=(c_{n+1},\ldots,h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b^T=(b_1,\ldots,b_m)$, $x, y$ là $n-\text{vector}$ với $x\in Z^n$ và $y\in R^p$.
-    \item Bài toán $(B)$ gọi là bài toán \textit{quy hoạch nguyên hoàn toàn.}
+    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(c_{n+1} \ldots c_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
+        b_1 \\
+        \ldots \\
+        b_m
+        \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
+    \item Bài toán $(B)$ gọi là bài toán \textit{quy hoạch nguyên bộ phận.}
     \item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán quy hoạch nguyên bộ phận.
     \end{itemize}
 \end{frame}
