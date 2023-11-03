@@ -80,11 +80,27 @@
         \end{aligned}\right.\]\\
     \end{center}
     \begin{itemize}
-    \item Trong đó $c=(c_1,\ldots,c_n)$, $h=(c_1,\ldots,h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b^T=(b_1,\ldots,b_m)$, $x, y$ là $n-\text{vector}$ với $x\in Z^n$ và $y\in R^p$.
+    \item Trong đó $c=(c_1,\ldots,c_n)$, $h=(c_{n+1},\ldots,h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b^T=(b_1,\ldots,b_m)$, $x, y$ là $n-\text{vector}$ với $x\in Z^n$ và $y\in R^p$.
     \item Bài toán $(B)$ gọi là bài toán \textit{quy hoạch nguyên hoàn toàn.}
     \item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán quy hoạch nguyên bộ phận.
     \end{itemize}
 \end{frame}
 \section{Phương pháp nhánh cận}
-\subsection{Quy hoạch tuyến tính mở rộng}
+\subsection{Mở rộng ràng buộc}
+\begin{frame}
+    Ta sẽ xử lý bài toán $(B)$ thông qua bài toán $(B_0)$ sau:
+    \begin{center}                    
+        \big($B_0$\big)\quad $f(x)=cx+hy \quad \longrightarrow Max$ \\
+        \[\left\{\begin{aligned}
+            &Ax+Gy \leq  b \\
+            &x,y \geq 0,
+        \end{aligned}\right.\]\\
+    \end{center}
+\begin{itemize}
+\item Tập $S_0:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán $(B_0)$
+\end{itemize}
+\end{frame}
+\begin{frame}
+    
+\end{frame}
 \end{document}
