@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}
+    [
+        xmin=-5,xmax=15,
+        ymin=-5,ymax=15,
+        grid=both,
+        grid style={line width=.1pt, draw=darkgray!10},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        minor tick num=4,
+        enlargelimits={abs=0.5},
+        axis line style={latex-latex},
+        samples=100,
+        domain = -20:20,
+      ]
+      %\addplot[red] {x + y  12};
+      \filldraw[blue, pattern=north west lines, pattern color=black] (0, 0) -- (0, 12) -- (12, 0) -- cycle;
+\end{axis}
+\end{tikzpicture}
+\end{document}
