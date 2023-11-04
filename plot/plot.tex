@@ -6,7 +6,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\pgfplotsset{compat=1.18, width=20cm}
+\pgfplotsset{compat=1.18, width = 15cm}
 \usetikzlibrary{patterns}
 \begin{document}
 \begin{tikzpicture}
@@ -25,13 +25,13 @@
         domain = -20:20,
       ]
       %\addplot[red] {x + y  12};
-      \draw[blue, line width=1] (-329.121594056562, 1329.121594056562) -- (1361.852829835849, -361.852829835849);
-      \draw[red, line width=1] (-527.8819391179369, 1097.2743028923019) -- (2180.8326190828393, -257.0829762080863);
+      \draw[blue, line width=1.5] (-329.121594056562, 1329.121594056562) -- (1361.852829835849, -361.852829835849);
+      \draw[red, line width=1.5] (-527.8819391179369, 1097.2743028923019) -- (2180.8326190828393, -257.0829762080863);
       \filldraw[black, pattern=north west lines, pattern color=black] (0, 0) -- (0, 833.3333333333334) -- (333.3333333333333, 666.6666666666666) -- (1000, 0) -- cycle;
-      \draw[->, thick] (0, 0) -- (200, 300);
-      \draw[black, line width=.9] (400, -100) -- (-150, 250);
-      \filldraw[black] (333.3333333333333, 666.6666666666666) circle (.07cm);
-      \node[anchor=north] at (1010, 850) {\small $x_1=333.33$, $x_2=666.66$};
+      \draw[->, line width=1.4] (0, 0) -- (200, 300);
+      \draw[black, line width=1] (400, -100) -- (-150, 250);
+      \filldraw[black] (333.3333333333333, 666.6666666666666) circle (.1cm);
+      \node[anchor=north] at (800, 800) {\large $x_1=333.33$, $x_2=666.66$};
 \end{axis}
 \end{tikzpicture}
 \end{document}
