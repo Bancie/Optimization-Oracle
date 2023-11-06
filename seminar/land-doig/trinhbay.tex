@@ -60,7 +60,12 @@
 
 \begin{frame}{TÓM TẮT}
 \begin{itemize}
-\item Giới thiệu về 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên.
+\item Giới thiệu về 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
+\begin{itemize}
+\item Tối ưu nguyên hoàn toàn
+\item Tối ưu nguyên bộ phận.
+\end{itemize}
+\item Tập trung vào phương pháp giải bài toán tối ưu nguyên bộ phận thông qua thuật toán nhánh cận.
 \end{itemize}
 \end{frame}
 
@@ -91,7 +96,7 @@
     \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
     \end{itemize}
 \end{frame}
-
+%cho bài toán ví dụ rõ số liệu
 \begin{frame}
 \begin{center}
 \begin{figure}
@@ -139,7 +144,7 @@
 \item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
 \end{itemize}
 \end{frame}
-
+%cho bài toán ví dụ rõ số liệu
 \begin{frame}
 \begin{center}
 \begin{figure}
@@ -165,8 +170,8 @@
 \end{center}      
 \end{frame}
     
-\section{Sơ bộ}
-\begin{frame}{Mục tiêu}
+\section{Mục tiêu}
+\begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
 (P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
@@ -177,12 +182,13 @@
 \end{split}
 \end{equation}
 \begin{itemize}
-\item Bài toán $(P)$ là một bài toán Tối ưu tuyến tính thông thường hay gọi đơn giản là Tối ưu tuyến tính.
+\item Trong đó $(P)$ là bài toán $(B)$ với nghiệm thuộc tập số thực.
+\item Bài toán $(P)$ là một bài toán Tối ưu tuyến tính thông thường hay gọi đơn giản là bài toán Tối ưu tuyến tính.
 \item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame} %aka Lí do chọn bài toán
 Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b^*, y_b^*)$ và giá trị tối ưu là $z_b^*$ thì ta có nhận xét sau:
 \begin{nx}
 \begin{itemize}
