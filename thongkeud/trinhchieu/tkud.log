@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.10)  10 NOV 2023 06:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.10)  10 NOV 2023 06:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -945,8 +945,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: l3backend-pdftex.def 2023-10-23 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count376
 \l__pdf_internal_box=\box89
-)
-No file tkud.aux.
+) (./tkud.aux)
 \openout1 = `tkud.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -969,7 +968,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 49.
 LaTeX Font Info:    Trying to load font information for T5+cmr on input line 49.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 49.
@@ -1028,6 +1027,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 49.
+ (./tkud.out) (./tkud.out)
 \@outlinefile=\write6
 \openout6 = `tkud.out'.
 
@@ -1046,5 +1046,4 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package caption Info: Begin \AtBeginDocument code.
-Packa
+Package caption Info: Begin \AtBe
