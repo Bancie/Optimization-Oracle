@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{pgfplotstable}
 \usepackage{textpos}
 \usepackage{pgfplots}
 \usepackage{tikz}
@@ -42,11 +43,7 @@
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \beamertemplatetransparentcoveredhigh
 \title[]{\fontsize{13pt}{10pt}\selectfont {\bf \Large ỨNG DỤNG VÀ CÁCH TẠO \\ THANG ĐO LIKERT}\\}
-\author[]{ Nguyễn Chí Bằng 
-
-\vspace{1cm}
-
-3122480004}
+\author[]{ Nguyễn Chí Bằng \\ 3122480004 \\ DTU1221}
 \small{\date{\today}}
 
 \begin{document}
@@ -56,148 +53,89 @@
 \end{frame}
 
 \begin{frame}{TÓM TẮT}
-\begin{itemize}
-\item Giới thiệu về 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
-\begin{itemize}
-\item Tối ưu nguyên hoàn toàn
-\item Tối ưu nguyên bộ phận.
-\end{itemize}
-\item Tập trung vào phương pháp giải bài toán tối ưu nguyên bộ phận thông qua thuật toán nhánh cận.
-\end{itemize}
-\end{frame}
+    Trong phần này chúng ta sẽ tìm hiểu về:
+    \begin{itemize}
+    \item Ứng dụng của thang đo Likert
+    \item Hướng dẫn chi tiết cách tạo thang đo Likert.
+    \end{itemize}
+    \end{frame}    
 
 \begin{frame}
     \frametitle{NỘI DUNG}
     \tableofcontents
+\end{frame}    
+
+\section{Ứng dụng và ví dụ của thang đo Likert}
+\begin{frame}{Ứng dụng và ví dụ của thang đo Likert}
+\begin{itemize}
+    \item Chúng ta sẽ khám phá ứng dụng đa dạng của thang đo Likert từ nghiên cứu khoa học đến quản lý tổ chức và đo độ hài lòng của khách hàng. 
+    \item Thang đo này không chỉ là công cụ đo lường mà còn là cầu nối quan trọng giữa nhà nghiên cứu và cộng đồng.
+    \item Thang đo Likert là một phương tiện đa dạng và hiệu quả trong việc thu thập ý kiến và đánh giá. Ví dụ trong lĩnh vực:
+    \begin{itemize}
+    \item Khoa học thần kinh.
+    \item Dịch vụ.
+\end{itemize}
+\end{itemize}
 \end{frame}
 
-\section{Giới thiệu}
-\begin{frame}{Tối ưu nguyên hoàn toàn}
-    \begin{equation} \label{H}
-        \begin{split}
-        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
-                  & \left\{\begin{split}
-                    &Ax \leq  b, \\
-                    &x \geq 0, \text{ nguyên} \\
-                    \end{split}\right.    
-        \end{split}
-        \end{equation}            
-    \begin{itemize} \small
-    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
-        b_1 \\
-        b_2 \\
-        \vdots \\
-        b_m
-        \end{pmatrix}$, với $x\in Z^n$.
-    \item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
-    \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
+\begin{frame}{Thang đo Likert trong khoa học thần kinh}
+    \begin{itemize}
+    \item Kết nối qua điện thoại thông minh và mạng xã hội đã trở thành không thể thiếu trong đời sống hàng ngày. Mặc dù nhiều người có trải nghiệm tích cực, sử dụng quá mức có thể ảnh hưởng tiêu cực đến sức khỏe tâm thần, đặc biệt là đối với giới trẻ. Nghiên cứu về lĩnh vực này đang ở giai đoạn đầu, nhưng thang đo Likert giúp đánh giá tác động của mạng xã hội.
     \end{itemize}
 \end{frame}
-%cho bài toán ví dụ rõ số liệu
+
 \begin{frame}
-\begin{center}
+    \pgfplotstableread{
+Place 1 2 3 4 5 6
+\textbf{Facebook} 2 8 8 6 8 67
+\textbf{TikTok} 16 32 9 5 4 33
+\textbf{YouTube} 19 41 17 12 6 5
+\textbf{Instagram} 10 27 12 7 5 38
+\textbf{Snapchat} 15 29 7 3 5 41
+}\testdata
 \begin{figure}
+\centering
 \begin{tikzpicture}
-\begin{axis}
-    [
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    grid=both,
-    grid style={line width=.1pt, draw=darkgray!50},
-    major grid style={line width=.2pt,draw=darkgray!50},
-    axis lines=middle,
-    minor tick num=1,
-    enlargelimits={abs=0},
-    samples=100,
-    domain = -20:20,
-    ]
-    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 8) -- (4.5, 6.5) -- (7.5, 0) -- cycle;
-\end{axis}
-\end{tikzpicture}  
-\caption{Tập nghiệm của bài toán Tối ưu nguyên hoàn toàn}
+    \begin{axis}[
+                legend cell align=left,
+                legend columns=3Z,
+                legend style = {at={(0.5, -0.23)}, anchor=north, inner sep=3pt, style={column sep=0.15cm}},
+                xbar stacked,
+                xmin=0,
+                xmax=100,
+                xticklabel=\pgfmathprintnumber{\tick}\,$\%$,
+                ytick=data,
+                yticklabels from table={\testdata}{Place}
+                ]
+        %add descrip
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendentry{}
+        \addlegendentry{\textbf{Mức độ sử dụng}}
+        \addlegendentry{}
+        %add plot
+        \addplot [fill=blue] table [x=1, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Liên tục}
+
+        \addplot [fill=blue!70] table [x=2, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Thỉnh thoảng}
+
+        \addplot [fill=blue!60] table [x=3, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{1 lần/ngày}
+
+        \addplot [fill=blue!50] table [x=4, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{vài lần/tuần}
+
+        \addplot [fill=blue!40] table [x=5, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Ít sử dụng}
+
+        \addplot [fill=blue!30] table [x=6, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Không sử dụng}
+    \end{axis}
+\end{tikzpicture}
+\caption{\centering $\%$ thanh thiếu niên Hoa Kỳ nói rằng họ truy cập hoặc sử dụng từng trang web hoặc ứng dụng trên.}
+\label{mxh}
 \end{figure}
-\end{center}      
-\end{frame}
-
-\begin{frame}{Tối ưu nguyên bộ phận}
-\begin{equation}\label{B}
-\begin{split}
-(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
-          & \left\{\begin{split}
-            &Ax+Gy \leq  b, \\
-            &x \geq 0, \text{ nguyên} \\
-            &y \geq 0.
-            \end{split}\right.    
-\end{split}
-\end{equation}    
-\begin{itemize} \small
-\item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
-    b_1 \\
-    b_2 \\
-    \vdots \\
-    b_m
-    \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
-\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
-\item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
-\end{itemize}
-\end{frame}
-%cho bài toán ví dụ rõ số liệu
-\begin{frame}
-\begin{center}
-\begin{figure}
-\begin{tikzpicture}
-\begin{axis}
-    [
-    xmin=0,xmax=5,
-    ymin=0,ymax=5,
-    grid style={line width=.1pt, draw=darkgray!50},
-    major grid style={line width=.2pt,draw=darkgray!50},
-    axis lines=middle,
-    minor tick num=1,
-    enlargelimits={abs=0},
-    samples=100,
-    domain = -20:20,
-    xmajorgrids=true,
-    ]
-    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 2.5) -- (2.5, 3.5) -- (4, 0) -- cycle;
-\end{axis}
-\end{tikzpicture}  
-\caption{Tập nghiệm của bài toán Tối ưu nguyên bộ phận}
-\end{figure}
-\end{center}      
-\end{frame}
-    
-\section{Mục tiêu}
-\begin{frame}{Bài toán quan tâm}
-\begin{equation}\label{P}
-\begin{split}
-(P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
-            & \left\{\begin{split}
-                &Ax+Gy \leq  b, \\
-                &x,y \geq 0.
-            \end{split}\right.    
-\end{split}
-\end{equation}
-\begin{itemize}
-\item Trong đó $(P)$ là bài toán $(B)$ với nghiệm thuộc tập số thực.
-\item Bài toán $(P)$ là một bài toán Tối ưu tuyến tính thông thường hay gọi đơn giản là bài toán Tối ưu tuyến tính.
-\item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
-\end{itemize}
-\end{frame}
-
-\begin{frame} %aka Lí do chọn bài toán
-Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b^*, y_b^*)$ và giá trị tối ưu là $z_b^*$ thì ta có nhận xét sau:
-\begin{nx}
-\begin{itemize}
-\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b^* < z_p$ và phương án có thể cải thiện.
-\item Nếu $S_b = S_p$ thì ta nhận được $z_b^* = z_p$ và bài toán được giải.
-\end{itemize}    
-\end{nx}
-Vì thế, ta chọn xử lý bài toán \eqref{B} thông qua bài toán \eqref{P}.
-\end{frame}
-
-\section{Thuật toán nhánh cận}
-\begin{frame}{title}
-    
 \end{frame}
 \end{document}

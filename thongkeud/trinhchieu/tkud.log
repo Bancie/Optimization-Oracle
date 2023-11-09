@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.26)  10 NOV 2023 05:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.10)  10 NOV 2023 06:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud
 (/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-10-23>
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-01>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2023/05/15 v3.70 A class for typesetting presentations
 (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -271,7 +271,7 @@ Package: xxcolor 2003/10/24 ver 0.1
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-10-21 v7.01c Hypertext links for LaTeX
+Package: hyperref 2023-10-27 v7.01d Hypertext links for LaTeX
  (/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -309,7 +309,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 \Hy@linkcounter=\count300
 \Hy@pagecounter=\count301
  (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-10-21 v7.01c Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2023-10-27 v7.01d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -317,7 +317,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count302
  (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-10-21 v7.01c Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2023-10-27 v7.01d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -361,7 +361,7 @@ Package hyperref Message: Stopped early.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-10-21 v7.01c Hyperref driver for pdfTeX
+File: hpdftex.def 2023-10-27 v7.01d Hyperref driver for pdfTeX
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
@@ -446,7 +446,7 @@ Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )
 \beamer@blockheadheight=\dimen281
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks34
 )
 \beamer@bibiconwidth=\skip56
@@ -728,58 +728,48 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count337
 \@lastruleclass=\count338
 \@thisrulewidth=\dimen306
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/textpos/textpos.sty
-Package: textpos 2022/07/23 v1.10.1
-Package textpos Info: choosing support for LaTeX3 on input line 60.
-\TP@textbox=\box76
-\TPHorizModule=\dimen307
-\TPVertModule=\dimen308
-\TP@margin=\dimen309
-\TP@absmargin=\dimen310
-
-Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen311
-\TP@tbargs=\toks48
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing (1.18.1)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box77
+\pgfnodeparttextbox=\box76
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen312
-\pgf@nodesepend=\dimen313
+\pgf@nodesepstart=\dimen307
+\pgf@nodesepend=\dimen308
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen314
-\pgffor@skip=\dimen315
-\pgffor@stack=\toks49
-\pgffor@toks=\toks50
+\pgffor@iter=\dimen309
+\pgffor@skip=\dimen310
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
 )) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count339
-\pgfplotmarksize=\dimen316
+\pgfplotmarksize=\dimen311
 )
-\tikz@lastx=\dimen317
-\tikz@lasty=\dimen318
-\tikz@lastxsaved=\dimen319
-\tikz@lastysaved=\dimen320
-\tikz@lastmovetox=\dimen321
-\tikz@lastmovetoy=\dimen322
-\tikzleveldistance=\dimen323
-\tikzsiblingdistance=\dimen324
-\tikz@figbox=\box78
-\tikz@figbox@bg=\box79
-\tikz@tempbox=\box80
-\tikz@tempbox@bg=\box81
+\tikz@lastx=\dimen312
+\tikz@lasty=\dimen313
+\tikz@lastxsaved=\dimen314
+\tikz@lastysaved=\dimen315
+\tikz@lastmovetox=\dimen316
+\tikz@lastmovetoy=\dimen317
+\tikzleveldistance=\dimen318
+\tikzsiblingdistance=\dimen319
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
 \tikztreelevel=\count340
 \tikznumberofchildren=\count341
 \tikznumberofcurrentchild=\count342
@@ -794,59 +784,80 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks51
-\t@pgfplots@tokb=\toks52
-\t@pgfplots@tokc=\toks53
-\pgfplots@tmpa=\dimen325
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
+\pgfplots@tmpa=\dimen320
 \c@pgfplots@coordindex=\count348
 \c@pgfplots@scanlineindex=\count349
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks54
-\t@pgf@tokb=\toks55
-\t@pgf@tokc=\toks56
+\t@pgf@toka=\toks53
+\t@pgf@tokb=\toks54
+\t@pgf@tokc=\toks55
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
 \c@pgfplotsarray@tmp=\count350
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
 \c@pgfplotstable@counta=\count351
-\t@pgfplotstable@a=\toks57
+\t@pgfplotstable@a=\toks56
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count352
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen326
-\pgfdecoratedremainingdistance=\dimen327
-\pgfdecoratedinputsegmentcompleteddistance=\dimen328
-\pgfdecoratedinputsegmentremainingdistance=\dimen329
-\pgf@decorate@distancetomove=\dimen330
+\pgfdecoratedcompleteddistance=\dimen321
+\pgfdecoratedremainingdistance=\dimen322
+\pgfdecoratedinputsegmentcompleteddistance=\dimen323
+\pgfdecoratedinputsegmentremainingdistance=\dimen324
+\pgf@decorate@distancetomove=\dimen325
 \pgf@decorate@repeatstate=\count353
-\pgfdecorationsegmentamplitude=\dimen331
-\pgfdecorationsegmentlength=\dimen332
+\pgfdecorationsegmentamplitude=\dimen326
+\pgfdecorationsegmentlength=\dimen327
 )
-\tikz@lib@dec@box=\box82
+\tikz@lib@dec@box=\box81
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count354
-\pgfplots@xmin@reg=\dimen333
-\pgfplots@xmax@reg=\dimen334
-\pgfplots@ymin@reg=\dimen335
-\pgfplots@ymax@reg=\dimen336
-\pgfplots@zmin@reg=\dimen337
-\pgfplots@zmax@reg=\dimen338
+\pgfplots@xmin@reg=\dimen328
+\pgfplots@xmax@reg=\dimen329
+\pgfplots@ymin@reg=\dimen330
+\pgfplots@ymax@reg=\dimen331
+\pgfplots@zmin@reg=\dimen332
+\pgfplots@zmax@reg=\dimen333
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen334
+\ar@mcellbox=\box82
+\extrarowheight=\dimen335
+\NC@list=\toks57
+\extratabsurround=\skip65
+\backup@length=\skip66
+\ar@cellbox=\box83
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2022/07/23 v1.10.1
+Package textpos Info: choosing support for LaTeX3 on input line 60.
+\TP@textbox=\box84
+\TPHorizModule=\dimen336
+\TPVertModule=\dimen337
+\TP@margin=\dimen338
+\TP@absmargin=\dimen339
+
+Grid set 16 x 16 = 22.7622pt x 17.07166pt
+\TPboxrulesize=\dimen340
+\TP@tbargs=\toks58
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen339
-\captionmargin=\dimen340
-\caption@leftmargin=\dimen341
-\caption@rightmargin=\dimen342
-\caption@width=\dimen343
-\caption@indent=\dimen344
-\caption@parindent=\dimen345
-\caption@hangindent=\dimen346
+\caption@tempdima=\dimen341
+\captionmargin=\dimen342
+\caption@leftmargin=\dimen343
+\caption@rightmargin=\dimen344
+\caption@width=\dimen345
+\caption@indent=\dimen346
+\caption@parindent=\dimen347
+\caption@hangindent=\dimen348
 Package caption Info: beamer document class detected.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-beamer.sto
 File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
@@ -863,14 +874,14 @@ File: pgfmoduledatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleoo.code.tex
 \pgfoo@objectcount=\count357
 \pgfoothis@count=\count358
-\pgfoo@toks=\toks58
+\pgfoo@toks=\toks59
 )
 \pgf@lib@dv@cache@count=\count359
 \pgf@lib@dv@cache@count=\count360
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box83
-\pgf@layerboxsaved@background=\box84
+\pgf@layerbox@background=\box85
+\pgf@layerboxsaved@background=\box86
 )
 \tikzdvvisualizercounter=\count361
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
@@ -891,12 +902,12 @@ Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environ
  (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count370
-\float@exts=\toks59
-\float@box=\box85
-\@float@everytoks=\toks60
-\@floatcapt=\box86
+\float@exts=\toks60
+\float@box=\box87
+\@float@everytoks=\toks61
+\@floatcapt=\box88
 )
-\@float@every@algorithm=\toks61
+\@float@every@algorithm=\toks62
 \c@algorithm=\count371
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
@@ -904,13 +915,13 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@line=\count373
 \c@ALC@rem=\count374
 \c@ALC@depth=\count375
-\ALC@tlm=\skip65
-\algorithmicindent=\skip66
+\ALC@tlm=\skip67
+\algorithmicindent=\skip68
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2023/07/05 v6.0f a miscellany of footnote facilities
-\FN@temptoken=\toks62
-\footnotemargin=\dimen347
-\@outputbox@depth=\dimen348
+\FN@temptoken=\toks63
+\footnotemargin=\dimen349
+\@outputbox@depth=\dimen350
 Package footmisc Info: Declaring symbol style bringhurst on input line 696.
 Package footmisc Info: Declaring symbol style chicago on input line 704.
 Package footmisc Info: Declaring symbol style wiley on input line 713.
@@ -918,140 +929,122 @@ Package footmisc Info: Declaring symbol style lamport-robust on input line 724.
 Package footmisc Info: Declaring symbol style lamport* on input line 744.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 765.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/indentfirst.sty
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write5
  Excluding comment 'comment') (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
-Runaway argument?
- Nguyễn Chí Bằng 
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Paragraph ended before \beamer@stripands was complete.
-<to be read again> 
-                   \par 
-l.49 3122480004}
-                
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 46.
 
 
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49 3122480004}
-                
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Misplaced \crcr.
-\endtabular ->\crcr 
-                    \egroup \egroup $\egroup 
-l.49 3122480004}
-                
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Too many }'s.
-\endtabular ->\crcr \egroup 
-                            \egroup $\egroup 
-l.49 3122480004}
-                
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Too many }'s.
-\endtabular ->\crcr \egroup \egroup 
-                                    $\egroup 
-l.49 3122480004}
-                
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.49 3122480004}
-                
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: LaTeX Error: \begin{document} ended by \end{tabular}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49 3122480004}
-                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Missing $ inserted.
-<inserted text> 
-                $
-l.49 3122480004}
-                
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/tkud.tex:49: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.49 3122480004}
-                
-Things are pretty mixed up, but I think the worst is over.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 46.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-10-23 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count376
-\l__pdf_internal_box=\box87
-) (./tkud.aux)
+\l__pdf_internal_box=\box89
+)
+No file tkud.aux.
 \openout1 = `tkud.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 52.
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 52.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 49.
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 49.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    ... okay on input line 49.
 
-*geometry* drive
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(10.94731pt, 342.30074pt, 10.94731pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=342.30074pt
+* \textheight=244.6939pt
+* \oddsidemargin=-61.32268pt
+* \evensidemargin=-61.32268pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count377
+\scratchdimen=\dimen351
+\scratchbox=\box90
+\nofMPsegments=\count378
+\nofMParguments=\count379
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count380
+\MPscratchDim=\dimen352
+\MPnumerator=\count381
+\makeMPintoPDFobject=\count382
+\everyMPtoPDFconversion=\toks65
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring OFF on input line 49.
+\@outlinefile=\write6
+\openout6 = `tkud.out'.
+
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Packa
