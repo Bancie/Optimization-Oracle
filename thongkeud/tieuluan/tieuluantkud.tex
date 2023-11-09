@@ -1,0 +1,260 @@
+\documentclass[12pt]{article}
+\usepackage{newcent} 
+\usepackage[margin=3.3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[tikz]{ocgx2}
+\usepackage{xcolor}
+\usepackage{pgfplotstable}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{nccmath}
+\pgfplotsset{width=10cm, height=7cm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\setlength\tabcolsep{10pt}
+\setlength\arraycolsep{10pt}
+\setlength\extrarowheight{10pt}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
+\newtheorem{dl}{Định lý}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{cy}{Chú ý}
+\begin{document}
+\setlength{\parindent}{10pt}
+%bia-start
+\begin{titlepage}
+
+    \begin{center}
+    
+    \textbf{\Large Trường Đại học Sài Gòn}
+    
+    \textbf{\Large Khoa Toán - Ứng dụng}
+        
+    \end{center}
+    
+    \vspace{2cm}
+    
+    \begin{center}
+    
+    \textbf{\huge BÀI TIỂU LUẬN GIỮA KÌ 1}
+    
+    \end{center}
+    
+    \vspace{1cm}
+    
+    \begin{center}
+    
+    \textbf{\huge ĐỀ TÀI (NHÓM 3)}
+
+    \vspace{.5cm}
+    
+    \textbf{\huge [Tên đề tài]}
+    
+    \end{center}
+    
+    \vspace{1cm}
+    
+    \begin{center}
+    
+    \textbf{\Large Sinh viên thực hiện}
+    
+    \vspace{.5cm}
+
+    \text{\Large Nguyễn Chí Bằng}
+    
+    \vspace{.4cm}
+
+    \text{\Large 3122480004}
+    
+    \end{center}
+    
+    \vspace{1cm}
+    
+    \begin{center}
+    
+    \textbf{\Large Giảng viên hướng dẫn}
+    
+    \vspace{.5cm}
+
+    \text{\Large TS. Nguyễn Văn Huấn}
+    
+    \end{center}
+    
+    \vspace{1cm}
+    
+    \begin{center}
+    
+    \text{\large Thành phố Hồ Chí Minh, năm 2023}
+    
+    \end{center}
+    
+    \end{titlepage}
+%bia-end    
+\title{ỨNG DỤNG VÀ CÁCH TẠO \\ THANG ĐO LIKERT}
+\author{Nguyễn Chí Bằng}
+\maketitle
+\begin{abstract}
+Trong phần này chúng ta sẽ tìm hiểu về ứng dụng của thang đo Likert đồng thời hướng dẫn chi tiết cách thức giúp người đọc có thể tạo và xử lý các vấn đề trong việc thu thập dữ liệu có sử dụng thang đo Likert. 
+\end{abstract}
+
+\tableofcontents
+
+\section{Ứng dụng và ví dụ của thang đo Likert}
+\phantom{}
+
+Trong phần này, chúng ta sẽ khám phá ứng dụng của thang đo Likert trong nhiều lĩnh vực khác nhau, từ nghiên cứu khoa học đến quản lý tổ chức và thậm chí là trong việc đo độ hài lòng của khách hàng. Hãy cùng nhau tìm hiểu cách mà thang đo Likert không chỉ là một công cụ đo lường mà còn là một cầu nối quan trọng giữa nhà nghiên cứu và ý kiến của cộng đồng.
+
+Có rất nhiều lĩnh vực có thể sử dụng thang đo Likert, tuy nhiên ta sẽ chỉ xem xét một số ví dụ có liên quan đến các lĩnh vực sau:
+\begin{itemize}
+    \item Khoa học thần kinh
+    \item Dịch vụ
+\end{itemize}
+
+Mỗi ví dụ đều cho chúng ta thấy rằng thang đo Likert không chỉ là một công cụ đơn giản mà còn là một phương tiện đa dạng và hiệu quả trong việc thu thập thông tin ý kiến và đánh giá từ cộng đồng.
+
+\subsection{Thang đo Likert trong khoa học thần kinh}
+\phantom{}
+
+Kết nối thông qua điện thoại thông minh và mạng xã hội giờ đây đã trở thành một phần không thể thiếu của nhiều người. Phần lớn mọi người đều có những trải nghiệm tích cực khi sử dụng mạng xã hội, nhưng nếu sử dụng quá mức sẽ gây ra những tác động tiêu cực đối với sức khỏe tâm thần lên người dùng. Nghiên cứu về lĩnh vực này vẫn đang ở những giai đoạn đầu, nhưng những nghiên cứu đều cho thấy tác động không nhỏ của mạng xã hội đến mọi người đặc biệt là giới trẻ.
+
+Phương pháp sử dụng thang đo Likert giúp ta có cái nhìn trực quan cho vấn đề trên. Theo Risa Gelles-Watnick (một nhà phân tích nghiên cứu tập trung vào nghiên cứu internet và công nghệ tại Trung tâm Nghiên cứu Pew), khoảng ba phần tư thanh thiếu niên $(77\%)$ nói rằng họ sử dụng YouTube hàng ngày, trong khi một phần nhỏ hơn thanh thiếu niên $(58\%)$ nói điều tương tự về TikTok. Khoảng một nửa thanh thiếu niên sử dụng Instagram $(50\%)$ hoặc Snapchat $(51\%)$ ít nhất một lần một ngày, trong khi $19\%$ báo cáo sử dụng Facebook hàng ngày.
+
+Một số thanh thiếu niên báo cáo sử dụng các nền tảng này gần như liên tục. Ví dụ, $19\%$ nói rằng họ sử dụng YouTube gần như liên tục, trong khi $16\%$ và $15\%$ nói tương tự về TikTok và Snapchat, tương ứng. (Hình \ref{mxh})
+
+\begin{itemize}
+\item Nguồn:
+\begin{itemize}
+\item Khảo sát được thực hiện từ ngày 14 tháng 4 đến ngày 4 tháng 5 năm 2022.
+"Teens, Social Media and Technology 2022".
+\item Thanh thiếu niên đề cập đến những người từ 13 đến 17 tuổi. Những người không đưa ra câu trả lời sẽ không được hiển thị.
+\end{itemize}
+\end{itemize}
+
+\vspace{1cm}
+
+\pgfplotstableread{
+Place 1 2 3 4 5 6
+\textbf{Facebook} 2 8 8 6 8 67
+\textbf{TikTok} 16 32 9 5 4 33
+\textbf{YouTube} 19 41 17 12 6 5
+\textbf{Instagram} 10 27 12 7 5 38
+\textbf{Snapchat} 15 29 7 3 5 41
+}\testdata
+\begin{figure}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+                legend cell align=left,
+                legend columns=3Z,
+                legend style = {at={(0.5, -0.23)}, anchor=north, inner sep=3pt, style={column sep=0.15cm}},
+                xbar stacked,
+                xmin=0,
+                xmax=100,
+                xticklabel=\pgfmathprintnumber{\tick}\,$\%$,
+                ytick=data,
+                yticklabels from table={\testdata}{Place}
+                ]
+        %add descrip
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendentry{}
+        \addlegendentry{\textbf{Mức độ sử dụng}}
+        \addlegendentry{}
+        %add plot
+        \addplot [fill=blue] table [x=1, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Liên tục}
+
+        \addplot [fill=blue!70] table [x=2, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Thỉnh thoảng}
+
+        \addplot [fill=blue!60] table [x=3, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{1 lần/ngày}
+
+        \addplot [fill=blue!50] table [x=4, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{vài lần/tuần}
+
+        \addplot [fill=blue!40] table [x=5, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Ít sử dụng}
+
+        \addplot [fill=blue!30] table [x=6, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Không sử dụng}
+    \end{axis}
+\end{tikzpicture}
+\caption{\centering $\%$ thanh thiếu niên Hoa Kỳ nói rằng họ truy cập hoặc sử dụng từng trang web hoặc ứng dụng trên.}
+\label{mxh}
+\end{figure}
+
+\subsection{Thang đo Likert trong dịch vụ}
+\phantom{}
+
+Trong những năm gần đây khi khi sự cạnh tranh giữa các doanh nghiệp làm trong mảng dịch vụ ngày càng khốc liệt, việc đáp ứng và vượt qua mong đợi của khách hàng trở thành một trong những yếu tố quyết định sự thành công của mọi doanh nghiệp. Để đo lường và hiểu rõ hơn về mức độ hài lòng của khách hàng, các công ty và doanh nghiệp đã chọn sử dụng thang đo Likert trong quá trình đánh giá chất lượng dịch vụ do công ty cung cấp.
+
+Việc sử dụng thang đo Likert trong dịch vụ, đặc biệt như đánh giá mức độ hài lòng của khách hàng giúp mang lại sự linh hoạt và chi tiết để đo lường ý kiến và cảm nhận. Thang đo Likert thường có một loạt các mức đánh giá từ tích cực đến tiêu cực, cho phép khách hàng chọn lựa mức độ đồng thuận hoặc phản đối của họ về một khía cạnh cụ thể của dịch vụ.
+
+Amazon, một trong những đế chế thương mại điện tử lớn nhất thế giới, không chỉ nổi tiếng với việc cung cấp hàng hóa và dịch vụ đa dạng mà còn với sự tập trung mạnh mẽ vào khách hàng. Sau đây là mô hình khảo sát của Amazon có sử dụng thang đo Likert nhằm mục đích đưa ra quyết định về các vấn đề về quảng cáo hiển thị trên ứng dụng bằng cách khảo sát cảm nhận của người dùng. (Hình \ref{amazon})
+
+$31\%$ người tiêu dùng nói rằng quảng cáo được tài trợ trong kết quả tìm kiếm là hữu ích. Chỉ có $20\%$ người tiêu dùng nói rằng những loại quảng cáo này gây mất tập trung.
+\begin{itemize}
+\item Nguồn:
+\begin{itemize}
+\item Dani Nadel (Chủ tịch và Giám đốc điều hành, Feedvisor).
+\item Báo cáo Hành vi Người tiêu dùng Amazon năm 2021.
+\end{itemize}
+\end{itemize}
+\pgfplotstableread{
+Place 1
+\text{Gây mất tập trung} 19.8
+\text{Không tin tưởng} 4.0
+\text{Không liên quan} 9.9
+\text{Ít quan tâm} 17.5
+\text{Không chắc} 6.4
+\text{Phù hợp} 11.5
+\text{Hữu ích} 30.9
+}\testdata
+\begin{figure}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+                legend cell align=left,
+                legend columns=3Z,
+                legend style = {at={(0.5, -0.23)}, anchor=north, inner sep=3pt, style={column sep=0.15cm}},
+                xbar stacked,
+                xmin=0,
+                xmax=35,
+                xticklabel=\pgfmathprintnumber{\tick}\,$\%$,
+                ytick=data,
+                yticklabels from table={\testdata}{Place}
+                ]
+        %add plot
+        \addplot [fill=red!60] table [x=1, meta=Place ,y expr=\coordindex] {\testdata};
+    \end{axis}
+\end{tikzpicture}
+\caption{\centering $\%$ người tiêu dùng cảm thấy quảng cáo được tài trợ hữu ích trên ứng dụng mua hàng Amazon.}
+\label{amazon}
+\end{figure}
+
+\section{Cách tạo thang đo Likert}
+\phantom{}
+
+Google form là công cụ tạo biểu mẫu giúp khảo sát thông tin bằng các câu hỏi trắc nghiệm hay tự luận. Mọi thông tin thu thập được từ google form đều được sao lưu tự động giúp người dùng thực hiện một cách dễ dàng. Vì thế, việc sử dụng Google form để tiến hành tạo khảo sát bằng thang đo Likert là một lựa chọn tối ưu cho tất cả mọi người. 
+\end{document}
