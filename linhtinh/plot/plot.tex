@@ -1,37 +1,75 @@
 \documentclass{standalone}
+\usepackage{newcent} 
 \usepackage[utf8]{inputenc}
 \usepackage[vietnamese]{babel}
-\usepackage{pgfplots}
-\usepackage{amsmath}
-\usepackage{tikz}
+\usepackage[tikz]{ocgx2}
+\usepackage{xcolor}
+\usepackage{pgfplotstable}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
 \usepackage{hyperref}
-\pgfplotsset{compat=1.18, width = 15cm}
-\usetikzlibrary{patterns}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{nccmath}
+\pgfplotsset{compat=1.9}
 \begin{document}
+
+\pgfplotstableread{
+Place 1 2 3 4 5 6
+\textbf{Facebook} 2 8 8 6 8 67
+\textbf{TikTok} 16 32 9 5 4 33
+\textbf{YouTube} 19 41 17 12 6 5
+\textbf{Instagram} 10 27 12 7 5 38
+\textbf{Snapchat} 15 29 7 3 5 41
+}\testdata
 \begin{tikzpicture}
-\begin{axis}
-    [
-        xmin=-500,xmax=2000,
-        ymin=-600,ymax=1300,
-        grid=both,
-        grid style={line width=.1pt, draw=darkgray!10},
-        major grid style={line width=.2pt,draw=darkgray!50},
-        axis lines=middle,
-        minor tick num=1,
-        enlargelimits={abs=0.5},
-        axis line style={latex-latex},
-        samples=100,
-        domain = -20:20,
-      ]
-      %\addplot[red] {x + y  12};
-      \draw[blue, line width=1.5] (-329.121594056562, 1329.121594056562) -- (1361.852829835849, -361.852829835849);
-      \draw[red, line width=1.5] (-527.8819391179369, 1097.2743028923019) -- (2180.8326190828393, -257.0829762080863);
-      \filldraw[black, pattern=north west lines, pattern color=black] (0, 0) -- (0, 833.3333333333334) -- (333.3333333333333, 666.6666666666666) -- (1000, 0) -- cycle;
-      \draw[->, line width=1.4] (0, 0) -- (200, 300);
-      \draw[black, line width=1] (400, -100) -- (-150, 250);
-      \filldraw[black] (333.3333333333333, 666.6666666666666) circle (.1cm);
-      \node[anchor=north] at (800, 800) {\large $x_1=333.33$, $x_2=666.66$};
-\end{axis}
+    \begin{axis}[
+                legend cell align=left,
+                legend columns=3Z,
+                legend style = {at={(0.5, -0.23)}, anchor=north, inner sep=3pt, style={column sep=0.15cm}},
+                xbar stacked,
+                xmin=0,
+                xmax=100,
+                xticklabel=\pgfmathprintnumber{\tick}\,$\%$,
+                ytick=data,
+                yticklabels from table={\testdata}{Place}
+                ]
+        %add descrip
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendimage{empty legend}
+        \addlegendentry{}
+        \addlegendentry{\textbf{Mức độ sử dụng}}
+        \addlegendentry{}
+        %add plot
+        \addplot [fill=blue] table [x=1, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Liên tục}
+
+        \addplot [fill=blue!70] table [x=2, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Thỉnh thoảng}
+
+        \addplot [fill=blue!60] table [x=3, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{1 lần/ngày}
+
+        \addplot [fill=blue!50] table [x=4, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{vài lần/tuần}
+
+        \addplot [fill=blue!40] table [x=5, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Ít sử dụng}
+
+        \addplot [fill=blue!30] table [x=6, meta=Place ,y expr=\coordindex] {\testdata};
+        \addlegendentry{Không sử dụng}
+    \end{axis}
 \end{tikzpicture}
 \end{document}
