@@ -80,62 +80,51 @@
 
 \begin{frame}{Thang đo Likert trong khoa học thần kinh}
     \begin{itemize}
-    \item Kết nối qua điện thoại thông minh và mạng xã hội đã trở thành không thể thiếu trong đời sống hàng ngày. Mặc dù nhiều người có trải nghiệm tích cực, sử dụng quá mức có thể ảnh hưởng tiêu cực đến sức khỏe tâm thần, đặc biệt là đối với giới trẻ. Nghiên cứu về lĩnh vực này đang ở giai đoạn đầu, nhưng thang đo Likert giúp đánh giá tác động của mạng xã hội.
+    \item Kết nối qua điện thoại thông minh và mạng xã hội đã trở thành không thể thiếu trong đời sống hàng ngày. Mặc dù nhiều người có trải nghiệm tích cực, sử dụng quá mức có thể ảnh hưởng tiêu cực đến sức khỏe tâm thần, đặc biệt là đối với giới trẻ.
+    \item Nghiên cứu về lĩnh vực này đang ở giai đoạn đầu, nhưng thang đo Likert giúp đánh giá tác động của mạng xã hội.
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \pgfplotstableread{
-Place 1 2 3 4 5 6
-\textbf{Facebook} 2 8 8 6 8 67
-\textbf{TikTok} 16 32 9 5 4 33
-\textbf{YouTube} 19 41 17 12 6 5
-\textbf{Instagram} 10 27 12 7 5 38
-\textbf{Snapchat} 15 29 7 3 5 41
-}\testdata
 \begin{figure}
-\centering
-\begin{tikzpicture}
-    \begin{axis}[
-                legend cell align=left,
-                legend columns=3Z,
-                legend style = {at={(0.5, -0.23)}, anchor=north, inner sep=3pt, style={column sep=0.15cm}},
-                xbar stacked,
-                xmin=0,
-                xmax=100,
-                xticklabel=\pgfmathprintnumber{\tick}\,$\%$,
-                ytick=data,
-                yticklabels from table={\testdata}{Place}
-                ]
-        %add descrip
-        \addlegendimage{empty legend}
-        \addlegendimage{empty legend}
-        \addlegendimage{empty legend}
-        \addlegendentry{}
-        \addlegendentry{\textbf{Mức độ sử dụng}}
-        \addlegendentry{}
-        %add plot
-        \addplot [fill=blue] table [x=1, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{Liên tục}
+    \centering
+    \includegraphics[width=0.8\linewidth]{/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/Screenshot 2023-11-10 at 07.06.53.png}
+    \caption{\centering $\%$ thanh thiếu niên Hoa Kỳ nói rằng họ truy cập hoặc sử dụng từng trang web hoặc ứng dụng trên.}
+\end{figure}    
+\end{frame}
 
-        \addplot [fill=blue!70] table [x=2, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{Thỉnh thoảng}
+\begin{frame}
+    \begin{itemize}
+    \item Theo Risa Gelles-Watnick (một nhà phân tích nghiên cứu tập trung vào nghiên cứu internet và công nghệ tại Trung tâm Nghiên cứu Pew)
+    \item Một số thanh thiếu niên báo cáo sử dụng các nền tảng này gần như liên tục.
+    \begin{itemize}
+    \item $19\%$ nói rằng họ sử dụng YouTube gần như liên tục
+    \item $16\%$ và $15\%$ nói tương tự về TikTok và Snapchat, tương ứng.
+    \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item Nguồn:
+        \begin{itemize}
+        \item Khảo sát được thực hiện từ ngày 14 tháng 4 đến ngày 4 tháng 5 năm 2022.
+        "Teens, Social Media and Technology 2022".
+        \item Thanh thiếu niên đề cập đến những người từ 13 đến 17 tuổi. Những người không đưa ra câu trả lời sẽ không được hiển thị.
+        \end{itemize}
+        \end{itemize}        
+\end{frame}
 
-        \addplot [fill=blue!60] table [x=3, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{1 lần/ngày}
+\begin{frame}{Thang đo Likert trong dịch vụ}
+    \begin{itemize}
+    \item Trong môi trường cạnh tranh khốc liệt của dịch vụ ngày nay, việc đáp ứng mong đợi của khách hàng trở thành quyết định quan trọng cho sự thành công doanh nghiệp. Để đo lường mức độ hài lòng của khách hàng, nhiều doanh nghiệp sử dụng thang đo Likert trong quá trình đánh giá chất lượng dịch vụ.
+    \item Sự linh hoạt và chi tiết của thang đo Likert giúp đo lường ý kiến và cảm nhận, đặc biệt là trong đánh giá mức độ hài lòng của khách hàng. 
+    \item Amazon, một đế chế thương mại điện tử toàn cầu, sử dụng thang đo Likert để khảo sát cảm nhận người dùng về quảng cáo hiển thị trên ứng dụng của họ.
+    \end{itemize}
+\end{frame}
 
-        \addplot [fill=blue!50] table [x=4, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{vài lần/tuần}
-
-        \addplot [fill=blue!40] table [x=5, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{Ít sử dụng}
-
-        \addplot [fill=blue!30] table [x=6, meta=Place ,y expr=\coordindex] {\testdata};
-        \addlegendentry{Không sử dụng}
-    \end{axis}
-\end{tikzpicture}
-\caption{\centering $\%$ thanh thiếu niên Hoa Kỳ nói rằng họ truy cập hoặc sử dụng từng trang web hoặc ứng dụng trên.}
-\label{mxh}
-\end{figure}
+\begin{frame}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{/Users/chibangnguyen/Documents/GitHub/NCKH/thongkeud/trinhchieu/Screenshot 2023-11-10 at 07.07.09.png}
+    \caption{\centering $\%$ người tiêu dùng cảm thấy quảng cáo được tài trợ hữu ích trên ứng dụng mua hàng Amazon.}
+\end{figure}        
 \end{frame}
 \end{document}
