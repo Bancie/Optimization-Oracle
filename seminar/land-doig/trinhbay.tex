@@ -70,7 +70,13 @@
 \end{frame}
 
 \section{Giới thiệu}
-\begin{frame}{Tối ưu nguyên hoàn toàn}
+
+\begin{frame}
+   \center 
+   \huge Giới thiệu bài toán 
+\end{frame}
+
+\begin{frame}{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
     \begin{equation} \label{H}
         \begin{split}
         (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
@@ -94,7 +100,7 @@
 
 %model_1: hoan toan
 \begin{frame} {Minh hoạ bài toán}
-    \begin{equation} \label{H}
+    \begin{equation}
         \begin{split}
         \quad & 2x_1 + 2x_2 \quad \longrightarrow Max \\
                     & \left\{\begin{split}
@@ -131,7 +137,7 @@
 \end{center}      
 \end{frame}
 
-\begin{frame}{Tối ưu nguyên bộ phận}
+\begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
 \begin{equation}\label{B}
 \begin{split}
 (B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
@@ -154,6 +160,19 @@
 \end{itemize}
 \end{frame}
 %cho bài toán ví dụ rõ số liệu
+\begin{frame}{Minh hoạ bài toán}
+   \begin{equation}
+        \begin{split}
+        \quad & x_1 + 2x_2 \quad \longrightarrow Max \\
+                    & \left\{\begin{split}
+                    & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
+                    & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
+                    &x_1, x_2 \geq 0, \\
+                    \end{split}\right.    
+        \end{split}
+        \end{equation}            
+\end{frame}
+
 \begin{frame}
 \begin{center}
 \begin{figure}
@@ -180,6 +199,12 @@
 \end{frame}
     
 \section{Mục tiêu}
+
+\begin{frame}
+   \center
+   \huge Mục tiêu phương pháp
+\end{frame}
+
 \begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
@@ -192,7 +217,7 @@
 \end{equation}
 \begin{itemize}
 \item Trong đó $(P)$ là bài toán $(B)$ với nghiệm thuộc tập số thực.
-\item Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính.
+\item Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
 \item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
 \end{itemize}
 \end{frame}
@@ -205,11 +230,29 @@ Giả sử ta nhận được tập phương án tối ưu của bài toán \eqr
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b^* = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}
-Vì thế, ta chọn xử lý bài toán \eqref{B} thông qua bài toán \eqref{P}.
+Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$.
 \end{frame}
 
 \section{Thuật toán nhánh cận}
-\begin{frame}{title}
-    
+\begin{frame}
+   \center
+   \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
 \end{frame}
+
+\begin{frame}
+    \begin{equation}
+    \begin{split}
+        (P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
+                & \left\{\begin{split}
+                    &Ax+Gy \leq  b, \\
+                    &x,y \geq 0.
+                \end{split}\right.    
+    \end{split}
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
 \end{document}
