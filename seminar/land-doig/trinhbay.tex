@@ -106,7 +106,7 @@
                     & \left\{\begin{split}
                     & x_1 + 3x_2 \leq 24 \\
                     & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
-                    &x_1, x_2 \geq 0, \\
+                    &x_1, x_2 \geq 0. \\
                     \end{split}\right.    
         \end{split}
         \end{equation}            
@@ -167,7 +167,7 @@
                     & \left\{\begin{split}
                     & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
                     & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
-                    &x_1, x_2 \geq 0, \\
+                    &x_1, x_2 \geq 0. \\
                     \end{split}\right.    
         \end{split}
         \end{equation}            
@@ -234,9 +234,77 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 \end{frame}
 
 \begin{frame}{Ví dụ}
-
+    \begin{columns}
+    \begin{column}{0.1\textwidth}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{equation*}
+        \begin{split}
+            (P) \quad & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
+            & \left\{\begin{split}
+            & -1x_1 + x_2 \leq 2 \\
+            & 8x_1 + 2x_2 \leq 17 \\
+            &x_1 \geq 0, \text{nguyên} \\
+            &x_2 \geq 0. \\
+            \end{split}\right. \\
+        \end{split}
+        \end{equation*}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{equation*}
+            \Longrightarrow
+            \left\{\begin{split}
+            \color{red} x_1 &\color{red} = 1.3 \\
+            \color{red} x_2 &\color{red} = 3.3 \\
+            z&=14.08
+        \end{split}\right.
+        \end{equation*}
+    \end{column}
+    \begin{column}{0.1\textwidth}
+    \end{column}
+    \end{columns}
+    \vspace{1cm}
+    \center
+    \Large
+    Phương án có thể cải thiện.
 \end{frame}
 
+
+\begin{frame}{Ví dụ}
+    \begin{columns}
+    \begin{column}{0.1\textwidth}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{equation*}
+        \begin{split}
+            (P) \quad & 3x_1 + 4x_2 \quad \longrightarrow Max \\
+            & \left\{\begin{split}
+            & 2.5x_1 + \frac{15}{4}x_2 \leq 20 \\
+            & x_1 + \frac{5}{3}x_2 \leq \frac{50}{3} \\
+            &x_1 \geq 0, \text{nguyên} \\
+            &x_2 \geq 0. \\
+            \end{split}\right. \\
+        \end{split}
+        \end{equation*}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{equation*}
+            \Longrightarrow
+            \left\{\begin{split}
+            \color{blue} x_1 &\color{blue} = 5 \\
+            \color{blue} x_2 &\color{blue} = 7 \\
+            z& =43
+        \end{split}\right.
+        \end{equation*}
+    \end{column}
+    \begin{column}{0.1\textwidth}
+    \end{column}
+    \end{columns}
+    \vspace{1cm}
+    \center
+    \Large
+    Bài toán được giải.
+\end{frame}
 
 \section{Thuật toán nhánh cận}
 \begin{frame}

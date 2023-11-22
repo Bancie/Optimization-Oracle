@@ -1,7 +1,11 @@
+import numpy as np
+from scipy import stats
+xk = np.arange(7)
+pk = (0.1, 0.2, 0.3, 0.1, 0.1, 0.0, 0.2)
+custm = stats.rv_discrete(name='custm', values=(xk, pk))
+
 import matplotlib.pyplot as plt
-
-x = [4,9,12]
-y = [5,10,14]
-
-plt.plot(x,y)
+fig, ax = plt.subplots(1, 1)
+ax.plot(xk, custm.pmf(xk), 'ro', ms=12, mec='r')
+ax.vlines(xk, 0, custm.pmf(xk), colors='r', lw=4)
 plt.show()
