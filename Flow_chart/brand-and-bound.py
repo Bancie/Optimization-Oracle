@@ -1,6 +1,7 @@
 import schemdraw
 import schemdraw.elements as elm
-with schemdraw.Drawing():
-    elm.Resistor()
-    elm.Capacitor()
-    elm.Diode()
+
+with schemdraw.Drawing() as d:
+    d.add(elm.Resistor())
+    d.add(elm.Capacitor())
+    d.add(elm.Diode())
