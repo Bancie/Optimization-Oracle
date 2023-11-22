@@ -223,15 +223,20 @@
 \end{frame}
 
 \begin{frame}{Mục tiêu} %aka Lí do chọn bài toán
-Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b^*, y_b^*)$ và giá trị tối ưu là $z_b^*$ thì ta có nhận xét sau:
+Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
 \begin{nx}
 \begin{itemize}
-\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b^* < z_p$ và phương án có thể cải thiện.
-\item Nếu $S_b = S_p$ thì ta nhận được $z_b^* = z_p$ và bài toán được giải.
+\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b < z_p$ và phương án có thể cải thiện.
+\item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}
 Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$.
 \end{frame}
+
+\begin{frame}{Ví dụ}
+
+\end{frame}
+
 
 \section{Thuật toán nhánh cận}
 \begin{frame}
@@ -240,19 +245,12 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 \end{frame}
 
 \begin{frame}
-    \begin{equation}
-    \begin{split}
-        (P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
-                & \left\{\begin{split}
-                    &Ax+Gy \leq  b, \\
-                    &x,y \geq 0.
-                \end{split}\right.    
-    \end{split}
-    \end{equation}
-
+ 
 \end{frame}
 
+%template to copy-paste
 \begin{frame}
+
 \end{frame}
 
 \end{document}
