@@ -11,7 +11,6 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{caption}
-
 \usetikzlibrary {datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
@@ -37,6 +36,10 @@
 \usepackage{footmisc}
 \usepackage{indentfirst} 
 \usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \usefonttheme{professionalfonts}
 \setbeamercolor{normal text}{bg=white,fg=black}
@@ -224,7 +227,7 @@
 
 \begin{frame}{Mục tiêu} %aka Lí do chọn bài toán
 Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
-\begin{nx}
+\begin{nx} \label{nx}
 \begin{itemize}
 \item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b < z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
@@ -312,13 +315,89 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
    \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
 \end{frame}
 
+\begin{frame}{Khái niệm và ký hiệu}
+\large
+Ở mục này, chúng ta sẽ làm rõ những ý tưởng sau:
+\begin{itemize}
+\item Định nghĩa cận và xác định cận của bài toán.
+\item Phương pháp xử lý bài toán kèm ví dụ minh hoạ và thuật toán.
+\end{itemize}
+\end{frame}
+   
+\begin{frame}{Xác định cận}
+Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
+\begin{dl}\label{cmnguyen}
+\begin{itemize}
+\item Với mỗi $x_j \in \mathbb{R}$, tồn tại duy nhất số nguyên $k \in \mathbb{Z}$ sao cho $k \leq x_j < k+1$.
+\begin{itemize}
+\item Giá trị $k$ khi đó ta gọi là phần nguyên nhỏ nhất của $x_j$, ký hiệu là $\lfloor x_j \rfloor$.
+\item Giá trị $k+1$ gọi là phần nguyên lớn nhất của $x_j$, ký hiệu là $\lceil x_j \rceil$.
+\end{itemize}
+\end{itemize}
+\end{dl}
+\end{frame}
+
 \begin{frame}
- 
+\begin{proof}
+\begin{itemize}
+\item $\forall x_j \geq 0$, ta có:
+\begin{itemize}
+\item $x_j \in \mathbb{Z} \Rightarrow \lfloor x_j \rfloor =x_j$. (đpcm)
+\item $x_j \notin \mathbb{Z}$, ta đặt $S=\{ m \in \mathbb{N} \: \vert \: m > x_j \}$ \\ Theo tiên đề Peano, luôn tồn tại một min$S$, vì thế ta dễ dàng nhận thấy min$S -1=k=\lfloor x_j \rfloor$ với $k \in \mathbb{Z}$ và thoả $k \leq x_j < k+1$ hay $\lfloor x_j \rfloor \leq x_j <\lceil x_j \rceil$. 
+\end{itemize}
+\end{itemize}
+\end{proof}
+
+\begin{vd}
+Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\lfloor x_1 \rfloor = 3$ và phần nguyên lớn nhất là $\lceil x_1 \rceil =4$.
+\end{vd}
+\end{frame}
+
+\begin{frame}{Phương pháp}
+\large
+\begin{itemize}
+\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, ký hiệu $x^0_j$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Nếu nghiệm thu được là $x^0_j$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{equation}
+    \begin{split}
+    (P_1) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
+                & \left\{\begin{split}
+                    &Ax+Gy \leq  b \\
+                    &\color{blue} x^0_j \leq \lfloor x^0_j \rfloor , \\
+                    &x,y \geq 0.
+                \end{split}\right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+\item Tập $S_1:=S_p \cap \{ (x,y): x^0_j \leq \lfloor x^0_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{equation}
+    \begin{split}
+    (P_2) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
+                & \left\{\begin{split}
+                    &Ax+Gy \leq  b \\
+                    &\color{blue} x^0_j \geq \lceil x^0_j \rceil , \\
+                    &x,y \geq 0.
+                \end{split}\right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+\item Tập $S_1:=S_p \cap \{ (x,y): x^0_j \geq \lceil x^0_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(P_2)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ minh hoạ}
 \end{frame}
 
 %template to copy-paste
 \begin{frame}
-
 \end{frame}
 
 \end{document}
