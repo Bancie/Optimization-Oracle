@@ -1,0 +1,38 @@
+\begin{frame}
+    Giải bài toán con $(P_1)$ và $(P_2)$ ta thu được nghiệm, nếu $\exists x^1_j \notin \mathbb{Z}$, ta tiếp tục cải thiện bằng cách phân nhánh ra các bài toán con đến lần lặp thứ t thoả điều kiện $\forall x^t_j \in \mathbb{Z}$.
+    \begin{equation}
+    \begin{split}
+    (P_1) \quad & z_1=c^Tx+h^Ty \quad \longrightarrow Max \\
+                & \left\{\begin{split}
+                    &Ax+Gy \leq  b \\
+                    &\color{blue} x^0_j \leq \lfloor x^0_j \rfloor \\
+                    &\color{blue} x^1_j \leq \lfloor x^1_j \rfloor \\
+                    &\color{blue} \vdots \\
+                    &\color{blue} x^t_j \leq \lfloor x^t_j \rfloor , \\
+                    &x,y \geq 0.
+                \end{split}\right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+\item Tập $S^t_1:=S_p \cap \{ (x,y): x^0_j \leq \lfloor x^0_j \rfloor; \: x^1_j \leq \lfloor x^1_j \rfloor; \ldots ; \: x^t_j \leq \lfloor x^t_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{equation}
+    \begin{split}
+    (P_1) \quad & z_1=c^Tx+h^Ty \quad \longrightarrow Max \\
+                & \left\{\begin{split}
+                    &Ax+Gy \leq  b \\
+                    &\color{blue} x^0_j \leq \lfloor x^0_j \rfloor \\
+                    &\color{blue} x^1_j \leq \lfloor x^1_j \rfloor \\
+                    &\color{blue} \vdots \\
+                    &\color{blue} x^t_j \leq \lfloor x^t_j \rfloor , \\
+                    &x,y \geq 0.
+                \end{split}\right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+\item Tập $S_t:=S_p \cap \{ (x,y): x^0_j \leq \lfloor x^0_j \rfloor; \: x^1_j \leq \lfloor x^1_j \rfloor; \ldots ; \: x^t_j \leq \lfloor x^t_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
+\end{itemize}
+\end{frame}
