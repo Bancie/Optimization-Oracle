@@ -8,7 +8,7 @@
 
 This repository provides a comprehensive collection of algorithm libraries for **Mixed/Pure integer linear programming (MILP/PILP)**, but it's more focus on MILP, a powerful optimization technique used to solve problems with discrete decision variables. MILP problems are ubiquitous in various fields, including operations research, finance, engineering, and computer science.
 
-**The MILP algorithms** are designed to find solutions that maximize or minimize a given objective function while satisfying a set of linear constraints. Unlike linear programming, which allows for continuous variables, MILP restricts the variables to integer values. This additional constraint makes MILP problems significantly more challenging to solve.
+The **MILP algorithms** are designed to find solutions that maximize or minimize a given objective function while satisfying a set of linear constraints. Unlike linear programming, which allows for continuous variables, MILP restricts the variables to integer values. This additional constraint makes MILP problems significantly more challenging to solve.
 
 
 ## This repository offers a diverse range of MILP algorithms, including:
