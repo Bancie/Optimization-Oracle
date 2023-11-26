@@ -6,7 +6,7 @@
 </a>
 <h3></h3>
 
-This repository provides a comprehensive collection of algorithms for **Mixed/pure integer linear programming (MILP/PILP)**, but it's more focus on MILP, a powerful optimization technique used to solve problems with discrete decision variables. MILP problems are ubiquitous in various fields, including operations research, finance, engineering, and computer science.
+This repository provides a comprehensive collection of algorithm libraries for **Mixed/Pure integer linear programming (MILP/PILP)**, but it's more focus on MILP, a powerful optimization technique used to solve problems with discrete decision variables. MILP problems are ubiquitous in various fields, including operations research, finance, engineering, and computer science.
 
 **MILP algorithms** are designed to find solutions that maximize or minimize a given objective function while satisfying a set of linear constraints. Unlike linear programming, which allows for continuous variables, MILP restricts the variables to integer values. This additional constraint makes MILP problems significantly more challenging to solve.
 
@@ -16,6 +16,6 @@ This repository provides a comprehensive collection of algorithms for **Mixed/pu
 - Cutting-plane. <span style="color:red"> *(loading)*</span>
 - And more.
 
-By providing a collection of well-documented and efficient MILP algorithms, this repository aims to serve as a valuable resource for researchers, practitioners, and students interested in solving discrete optimization problems. The repository is continuously updated with new algorithms and techniques as they emerge in the field of MILP.
+By providing a collection of well-documented and efficient MILP algorithm libraries, this repository aims to serve as a valuable resource for researchers, practitioners, and students interested in solving discrete optimization problems. This repository is continuously updated with new algorithms and techniques as they emerge in the field of MILP.
 
 > ✨ For inquiries, please contact me at [21510802132@uah.edu.vn](https://mail.google.com/mail)
