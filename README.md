@@ -12,8 +12,10 @@ The **MILP algorithms** are designed to find solutions that maximize or minimize
 
 
 ## This repository offers a diverse range of MILP algorithms, including:
-- Branch-and-Bound. <span style="color:red"> *(loading)*</span>
-- Cutting-plane. <span style="color:red"> *(loading)*</span>
+- Basic Branch-and-Bound. <span style="color:red"> *(loading 90%)*</span>
+- Branch-and-Bound include Machine learning. <span style="color:red"> *(loading)*</span>
+- Basic Cutting-plane. <span style="color:red"> *(loading)*</span>
+- Deep learning to define Lagrange multiplier for Duality MILP problem. <span style="color:red"> *(loading)*</span>
 - And more.
 
 By providing a collection of well-documented and efficient MILP algorithm libraries, this repository aims to serve as a valuable resource for researchers, practitioners, and students interested in solving discrete optimization problems. This repository is continuously updated with new algorithms and techniques as they emerge in the field of MILP.
