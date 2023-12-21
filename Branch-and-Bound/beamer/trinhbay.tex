@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary {datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
@@ -58,12 +59,17 @@
 
 \begin{frame}{TÓM TẮT}
 \begin{itemize}
-\item Giới thiệu về 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
+\item Giới thiệu 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
 \begin{itemize}
 \item Tối ưu nguyên hoàn toàn
 \item Tối ưu nguyên bộ phận.
 \end{itemize}
 \item Tập trung vào phương pháp giải bài toán tối ưu nguyên bộ phận thông qua thuật toán nhánh cận.
+\begin{itemize}
+\item Cơ sở lý thuyết.
+\item Sơ đồ thuật toán.
+\end{itemize}
+\item Độ phức tạp của thuật toán.
 \end{itemize}
 \end{frame}
 
@@ -229,7 +235,7 @@
 Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
 \begin{nx} \label{nx}
 \begin{itemize}
-\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b < z_p$ và phương án có thể cải thiện.
+\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}
@@ -247,7 +253,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
             & \left\{\begin{split}
             & -1x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -284,7 +290,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
             & \left\{\begin{split}
             & 2.5x_1 + \frac{15}{4}x_2 \leq 20 \\
             & x_1 + \frac{5}{3}x_2 \leq \frac{50}{3} \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -315,16 +321,17 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
    \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
 \end{frame}
 
-\begin{frame}{Khái niệm và ký hiệu}
+\begin{frame}{Nội dung chính}
 \large
 Ở mục này, chúng ta sẽ làm rõ những ý tưởng sau:
 \begin{itemize}
 \item Định nghĩa cận và xác định cận của bài toán.
-\item Phương pháp xử lý bài toán kèm ví dụ minh hoạ và thuật toán.
+\item Phương pháp xử lý bài toán nhỏ kèm ví dụ minh hoạ.
+\item Sơ đồ thuật giải và các ví dụ minh hoạ cho bài toán lớn.
 \end{itemize}
 \end{frame}
-   
-\begin{frame}{Xác định cận}
+
+\begin{frame}{Phương pháp xác định cận}
 Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
 \begin{dl}\label{cmnguyen}
 \begin{itemize}
@@ -353,11 +360,11 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \end{vd}
 \end{frame}
 
-\begin{frame}{Phương pháp}
+\begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, ký hiệu $x^0_j$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
-\item Nếu nghiệm thu được là $x^0_j$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
+\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
 
@@ -367,13 +374,13 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
     (P_1) \quad & z_1=c^Tx+h^Ty \quad \longrightarrow Max \\
                 & \left\{\begin{split}
                     &Ax+Gy \leq  b \\
-                    &\color{blue} x^0_j \leq \lfloor x^0_j \rfloor , \\
+                    &\color{blue} x_j \leq \lfloor x_j \rfloor , \\
                     &x,y \geq 0.
                 \end{split}\right.    
     \end{split}
 \end{equation}
 \begin{itemize}
-\item Tập $S_1:=S_p \cap \{ (x,y): x^0_j \leq \lfloor x^0_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
+\item Tập $S_1:=S_p \cap \{ (x,y): x_j \leq \lfloor x_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
 \end{itemize}
 \end{frame}
 
@@ -383,13 +390,28 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
     (P_2) \quad & z_2=c^Tx+h^Ty \quad \longrightarrow Max \\
                 & \left\{\begin{split}
                     &Ax+Gy \leq  b \\
-                    &\color{blue} x^0_j \geq \lceil x^0_j \rceil , \\
+                    &\color{blue} x_j \geq \lceil x_j \rceil , \\
                     &x,y \geq 0.
                 \end{split}\right.    
     \end{split}
 \end{equation}
 \begin{itemize}
-\item Tập $S_2:=S_p \cap \{ (x,y): x^0_j \geq \lceil x^0_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(P_2)$.
+\item Tập $S_2:=S_p \cap \{ (x,y): x_j \geq \lceil x_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(P_2)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Điều kiện nghiệm}
+\begin{itemize}
+\item Nếu tồn tại $P_i$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\item Giả sử $x^i$ là nghiệm tối ưu của bài toán $P_i$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\begin{itemize}
+\item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm của bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $P_i$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
+\iffalse
+Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
+\fi
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -400,7 +422,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
             & \left\{\begin{split}
             & -x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -444,7 +466,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
             & -x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
             & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0 \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -458,7 +480,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
             & -x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
             & \color{blue} x_1 \geq 2 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0 \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -475,7 +497,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
             & -x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
             & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0 \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -483,7 +505,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \end{frame}
 
 \begin{frame}
-    Giải bài toán ta được $x^1_1=1, x^1_2=3$ và $z_1=11.8$. \textbf{Bài toán được giải.}
+    Giải bài toán ta được $x^1_1=1, x^1_2=3$ và $z_1=11.8$. Bài toán được giải \textbf{(gọt bởi nghiệm nguyên)}.
     \vspace{1cm}
     \begin{figure}
     \begin{tikzpicture}[scale=.9]
@@ -519,7 +541,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
             & 8x_1 + 2x_2 \leq 17 \\
             & \color{blue} x_1 \geq 2 \\
             & \color{blue} x_2 \leq 0 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0 \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -534,7 +556,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
             & 8x_1 + 2x_2 \leq 17 \\
             & \color{blue} x_1 \geq 2 \\
             & \color{blue} x_2 \geq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0 \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -545,12 +567,54 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 
 \begin{frame}
     \begin{itemize} 
-    \item Giải bài toán $(P_3)$ ta được $x^2_1=2.125, x^2_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$. 
-    \item Bài toán $(P_4)$ vô nghiệm.
+    \item Giải bài toán $(P_3)$ ta được $x^2_1=2.125, x^2_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \item Bài toán $(P_4)$ \textbf{vô nghiệm}.
     \item Vậy phương án tối ưu của bài toán là $x_1=1, x_2=3$ và $z=11.8$.
 \end{itemize}
-
 \end{frame}
+
+\begin{frame}{Sơ đồ thuật giải}
+\center
+\begin{figure}
+\begin{tikzpicture}[scale=0.33, every node/.style={scale=0.33}, node distance=4cm]
+    % Define styles
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+    \tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+    \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+    % Place nodes
+    \node (start) [startstop, xshift=-5cm] {Start};
+    \node (b0) [io, right of=start] {b0};
+    \node (b1) [decision, right of=b0] {b1};
+    \node (b2) [process, right of=b1] {b2};
+    \node (b3) [process, right of=b2] {b3};
+    \node (b4) [decision, right of=b3] {b4};
+    \node (b5) [decision, right of=b4] {b5};
+    \node (b6) [io, above of=b5] {b6};
+    \node (b7) [io, right of=b5] {b7};
+    \node (kl) [process, below of=b1] {kl};
+    \node (stop) [startstop, right of=b7] {Stop};
+    % Draw arrows
+    \draw [arrow] (start) -- (b0);
+    \draw [arrow] (b0) -- (b1);
+    \draw [arrow] (b1) -- node[anchor=south] {no} (b2);
+    \draw [arrow] (b2) -- (b3);
+    \draw [arrow] (b3) -- (b4);
+    \draw [arrow] (b4) -- node[anchor=south] {no} (b5);
+    \draw [arrow] (b5) -- node[anchor=west] {no} (b6);
+    \draw [arrow] (b5) -- node[anchor=south] {yes} (b7);
+    \draw [arrow] (b4) --node[anchor=west] {yes} (15,2) -- (3,2) -- (b1);
+    \draw [arrow] (b6) -| (b1);
+    \draw [arrow] (b7) -- (23,6) -- (3,6) -- (b1);
+    \draw [arrow] (b7) -- (stop);
+    \draw [arrow] (b1) -- node[anchor=west] {yes} (kl);
+    \draw [arrow] (kl) -| (stop);
+\end{tikzpicture}
+\end{figure}
+\end{frame} 
+
+\section{Độ phức tạp}
 
 \begin{frame}
 \end{frame}

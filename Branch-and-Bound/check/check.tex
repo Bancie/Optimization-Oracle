@@ -1,0 +1,138 @@
+\documentclass{beamer}
+\mode<presentation>
+\setbeamertemplate{bibliography item}{}
+\usepackage[utf8]{vietnam}
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\setbeamertemplate{bibliography item}[text]
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE Phương pháp nhánh cận}\\}
+\author[]{\bf Nguyễn Chí Bằng \\}
+\small{\date{\today}}
+\begin{document}
+\iffalse
+\begin{frame}{Sơ đồ thuật giải}
+\center
+\begin{figure}
+\begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}, node distance=4cm]
+    
+    % Define styles
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+    \tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+    \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+
+    % Place nodes
+    \node (start) [startstop, xshift=-5cm] {Bắt đầu};
+    \node (stop) [startstop, right of=b7] {Kết thúc};
+    \node (b0) [io, right of=start] {a};
+    \node (b1) [decision, right of=b0] {a};
+    \node (b2) [process, right of=b1] {a};
+    \node (b3) [process, right of=b2, yshift=1cm] {a};
+    \node (b4) [decision, right of=b3] {a};
+    \node (b5) [decision, right of=b4] {a};
+    \node (b6) [io, above of=b5, yshift=1cm] {a};
+    \node (b7) [io, right of=b5] {a};
+    \node (kl) [io, below of=b1, yshift=1cm] {a};
+
+    % Draw arrows
+    \draw [arrow] (start) -- (b0);
+    \draw [arrow] (b0) -- (b1);
+    \draw [arrow] (b1) -- (b2);
+    \draw [arrow] (b1) -- (kl);
+    \draw [arrow] (b2) -- (b3);
+    \draw [arrow] (b3) -- (b4);
+    \draw [arrow] (b4) -- (b5);
+    \draw [arrow] (b5) -- (b6);
+    \draw [arrow] (b5) -- (b7);
+    \draw [arrow] (b6) |- (b1);
+    \draw [arrow] (b7) |- (b1);
+    \draw [arrow] (b4) |- (b1);
+    \draw [arrow] (kl) -| (stop);
+
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+\fi
+\begin{frame}{Sơ đồ thuật giải}
+    \center
+    \begin{figure}
+    \begin{tikzpicture}[scale=0.33, every node/.style={scale=0.33}, node distance=4cm]
+        % Define styles
+        \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+        \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+        \tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+        \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+        \tikzstyle{arrow} = [thick,->,>=stealth]
+        % Place nodes
+        \node (start) [startstop, xshift=-5cm] {Start};
+        \node (b0) [io, right of=start] {b0};
+        \node (b1) [decision, right of=b0] {b1};
+        \node (b2) [process, right of=b1] {b2};
+        \node (b3) [process, right of=b2] {b3};
+        \node (b4) [decision, right of=b3] {b4};
+        \node (b5) [decision, right of=b4] {b5};
+        \node (b6) [io, above of=b5] {b6};
+        \node (b7) [io, right of=b5] {b7};
+        \node (kl) [process, below of=b1] {kl};
+        \node (stop) [startstop, right of=b7] {Stop};
+        % Draw arrows
+        \draw [arrow] (start) -- (b0);
+        \draw [arrow] (b0) -- (b1);
+        \draw [arrow] (b1) -- node[anchor=south] {no} (b2);
+        \draw [arrow] (b2) -- (b3);
+        \draw [arrow] (b3) -- (b4);
+        \draw [arrow] (b4) -- node[anchor=south] {no} (b5);
+        \draw [arrow] (b5) -- node[anchor=west] {no} (b6);
+        \draw [arrow] (b5) -- node[anchor=south] {yes} (b7);
+        \draw [arrow] (b4) --node[anchor=west] {yes} (15,2) -- (3,2) -- (b1);
+        \draw [arrow] (b6) -| (b1);
+        \draw [arrow] (b7) -- (23,6) -- (3,6) -- (b1);
+        \draw [arrow] (b7) -- (stop);
+        \draw [arrow] (b1) -- node[anchor=west] {yes} (kl);
+        \draw [arrow] (kl) -| (stop);
+    \end{tikzpicture}
+    \end{figure}
+    \end{frame}    
+\end{document}
