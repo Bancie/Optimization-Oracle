@@ -430,7 +430,7 @@ Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con 
 \end{frame}
 
 \begin{frame}
-    Giải bài toán bằng phương pháp đơn hình thông thường ta được nghiệm $x^0_1 =1.3$, $x^0_2 = 3.3$ và $z_p=14.08$.
+    Giải bài toán bằng phương pháp đơn hình thông thường ta được nghiệm $x_1 =1.3$, $x_2 = 3.3$ và $z_p=14.08$.
     \vspace{1cm}
     \begin{figure}
     \begin{tikzpicture}[scale=.9]
@@ -456,18 +456,18 @@ Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con 
 
 %template to copy-paste
 \begin{frame}
-Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
+Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
 \begin{columns}
 \begin{column}{0.5\textwidth}
     \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x_1 + 2.1x_2 \\
+            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0 \\
-            &x_2 \geq 0. \\
+            & -x^1_1 + x^1_2 \leq 2 \\
+            & 8x^1_1 + 2x^1_2 \leq 17 \\
+            & \color{blue} x^1_1 \leq 1 \\
+            &x^1_1 \geq 0 \\
+            &x^1_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -475,13 +475,13 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{column}{0.5\textwidth}
    \begin{equation*}
         \begin{split}
-            (P_2) \quad z_2= & 5.5x_1 + 2.1x_2  \\
+            (P_2) \quad z_2= & 5.5x^2_1 + 2.1x^2_2  \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            &x_1 \geq 0 \\
-            &x_2 \geq 0. \\
+            & -x^2_1 + x^2_2 \leq 2 \\
+            & 8x^2_1 + 2x^2_2 \leq 17 \\
+            & \color{blue} x^2_1 \geq 2 \\
+            &x^2_1 \geq 0 \\
+            &x^2_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -492,13 +492,13 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{frame}
         \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
+            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \quad \longrightarrow Max \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0 \\
-            &x_2 \geq 0. \\
+            & -x^1_1 + x^1_2 \leq 2 \\
+            & 8x^1_1 + 2x^1_2 \leq 17 \\
+            & \color{blue} x^1_1 \leq 1 \\
+            &x^1_1 \geq 0 \\
+            &x^1_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -530,19 +530,19 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \end{frame}
 
 \begin{frame}
-    Tương tự bài toán $(P_2)$ ta được $x^1_1 = 2, x^1_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^1_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
+    Tương tự bài toán $(P_2)$ ta được $x^2_1 = 2, x^2_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^2_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
     \begin{columns}
 \begin{column}{0.5\textwidth}
     \begin{equation*}
         \begin{split}
-            (P_3) \quad z_3= & 5.5x_1 + 2.1x_2 \\
+            (P_3) \quad z_3= & 5.5x^3_1 + 2.1x^3_2 \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            & \color{blue} x_2 \leq 0 \\
-            &x_1 \geq 0 \\
-            &x_2 \geq 0. \\
+            & -x^3_1 + x^3_2 \leq 2 \\
+            & 8x^3_1 + 2x^3_2 \leq 17 \\
+            & \color{blue} x^3_1 \geq 2 \\
+            & \color{blue} x^3_2 \leq 0 \\
+            &x^3_1 \geq 0 \\
+            &x^3_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -550,14 +550,14 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{column}{0.5\textwidth}
    \begin{equation*}
         \begin{split}
-            (P_4) \quad z_4= & 5.5x_1 + 2.1x_2  \\
+            (P_4) \quad z_4= & 5.5x^4_1 + 2.1x^4_2  \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            & \color{blue} x_2 \geq 1 \\
-            &x_1 \geq 0 \\
-            &x_2 \geq 0. \\
+            & -x^4_1 + x^4_2 \leq 2 \\
+            & 8x^4_1 + 2x^4_2 \leq 17 \\
+            & \color{blue} x^4_1 \geq 2 \\
+            & \color{blue} x^4_2 \geq 1 \\
+            &x^4_1 \geq 0 \\
+            &x^4_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -567,9 +567,9 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 
 \begin{frame}
     \begin{itemize} 
-    \item Giải bài toán $(P_3)$ ta được $x^2_1=2.125, x^2_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \item Giải bài toán $(P_3)$ ta được $x^3_1=2.125, x^3_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
     \item Bài toán $(P_4)$ \textbf{vô nghiệm}.
-    \item Vậy phương án tối ưu của bài toán là $x_1=1, x_2=3$ và $z=11.8$.
+    \item Vậy phương án tối ưu của bài toán là $x^1_1=1, x^1_2=3$ và $z=11.8$.
 \end{itemize}
 \end{frame}
 
@@ -593,7 +593,7 @@ Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sa
 \noindent \textbf{Bước 4. Xác định cận} \\ 
 Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\ 
 \noindent \textbf{Bước 5. Gọt nghiệm} \\
-Nếu tồn tại $x^i \notin Z^n_+$, ta thêm nút $N_{i1}, \ldots , N_{ik}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
+Nếu tồn tại $x^i \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
 Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^i,y^i) = (x^*,y^*)$ và quay lại bước 2.
 \end{frame}    
 
@@ -638,6 +638,139 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
 \caption{Lưu đồ giải thuật của thuật toán nhánh cận.}
 \end{figure}
 \end{frame}   
+
+\begin{frame}{Ví dụ minh hoạ}
+    \begin{equation*}
+    \begin{split}
+    (P) \quad z_p= & 5.5x_1 + 2.1x_2 + 3x_3 \quad \longrightarrow Max \\
+    & \left\{\begin{split}
+    & -x_1 + x_2 + x_3 \leq 2 \\
+    & 8x_1 + 2x_2 + x_3\leq 17 \\
+    & 9x_1 + x_2 + 6x_3 \leq 20 \\
+    &x_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+    \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    Giải bài toán $(P)$ ta được $x_1=1.38, x_2=2.55, x_3=0.83$. \\
+    Ta chọn biến $x_1$ để phân nhánh. ($x_2, x_3$ tương tự)
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^1_1 \leq 1$ \\ 
+    \begin{equation*}
+    \begin{split}
+      (P_1) \quad z_p= & 5.5x^1_1 + 2.1x^1_2 + 3x^1_3 \quad \longrightarrow Max \\
+      & \left\{\begin{split}
+      & -x^1_1 + x^1_2 + x^1_3 \leq 2 \\
+      & 8x^1_1 + 2x^1_2 + x^1_3\leq 17 \\
+      & 9x^1_1 + x^1_2 + 6x^1_3 \leq 20 \\
+      & x^1_1 \leq 1 \\
+      &x^1_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+      \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    $\rightarrow z_1=13.24, x^1_1=1, x^1_2=1.4, x^1_3=1.6$
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^2_1 \geq 2$ \\
+    \begin{equation*}
+      \begin{split}
+        (P_2) \quad z_p= & 5.5x^2_1 + 2.1x^2_2 + 3x^2_3 \quad \longrightarrow Max \\
+        & \left\{\begin{split}
+        & -x^2_1 + x^2_2 + x^2_3 \leq 2 \\
+        & 8x^2_1 + 2x^2_2 + x^2_3\leq 17 \\
+        & 9x^2_1 + x^2_2 + 6x^2_3 \leq 20 \\
+        & x^2_1 \geq 2 \\
+        &x^2_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+        \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    $\rightarrow z_2=12.58, x^2_1=2, x^2_2=0.36, x^2_3=0.27$
+    \end{frame}
+    
+    \begin{frame}
+      Ta tiếp tục chọn $x^1_2=1.4$ từ $(P_1)$. Với $x^3_2 \leq 1$
+    \begin{equation*}
+      \begin{split}
+          (P_3) \quad z_p= & 5.5x^3_1 + 2.1x^3_2 + 3x^3_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^3_1 + x^3_2 + x^3_3 \leq 2 \\
+          & 8x^3_1 + 2x^3_2 + x^3_3\leq 17 \\
+          & 9x^3_1 + x^3_2 + 6x^3_3 \leq 20 \\
+          & x^3_1 \leq 1 \\
+          & x^3_2 \leq 1 \\
+          &x^3_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_3=12.6, x^3_1=1, x^3_2=1, x^3_3=1.66$
+    \end{frame}
+    
+    \begin{frame}
+     Với $x^4_2 \geq 2$
+    \begin{equation*}
+      \begin{split}
+          (P_4) \quad z_p= & 5.5x^4_1 + 2.1x^4_2 + 3x^4_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^4_1 + x^4_2 + x^4_3 \leq 2 \\
+          & 8x^4_1 + 2x^4_2 + x^4_3\leq 17 \\
+          & 9x^4_1 + x^4_2 + 6x^4_3 \leq 20 \\
+          & x^4_1 \leq 1 \\
+          & x^4_2 \geq 2 \\
+          &x^4_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_4=12.7, x^4_1=1, x^4_2=2, x^4_3=1 \rightarrow$ \textbf{gọt bởi nghiệm nguyên}.
+    \end{frame}
+    
+    \begin{frame}
+    Ta chọn $x^3_3=1.66$ từ $(P_3)$. Với $x^5_3 \leq 1$.
+    \begin{equation*}
+      \begin{split}
+          (P_5) \quad z_p= & 5.5x^5_1 + 2.1x^5_2 + 3x^5_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^5_1 + x^5_2 + x^5_3 \leq 2 \\
+          & 8x^5_1 + 2x^5_2 + x^5_3\leq 17 \\
+          & 9x^5_1 + x^5_2 + 6x^5_3 \leq 20 \\
+          & x^5_1 \leq 1 \\
+          & x^5_2 \leq 1 \\
+          & x^5_3 \leq 1 \\
+          &x^5_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_5=10.6, x^5_1=1, x^5_2=1, x^5_3=1 \rightarrow$ gọt bởi nghiệm nguyên nhưng $z_5<z_4 \rightarrow$ loại.
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^6_3 \geq 2$.
+    \begin{equation*}
+      \begin{split}
+          (P_6) \quad z_p= & 5.5x^6_1 + 2.1x^6_2 + 3x^6_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^6_1 + x^6_2 + x^6_3 \leq 2 \\
+          & 8x^6_1 + 2x^6_2 + x^6_3\leq 17 \\
+          & 9x^6_1 + x^6_2 + 6x^6_3 \leq 20 \\
+          & x^6_1 \leq 1 \\
+          & x^6_2 \leq 1 \\
+          & x^6_3 \geq 2 \\
+          &x^6_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_6=12.08, x^6_1=0.8, x^6_2=0.8, x^6_3=2 \rightarrow$ \textbf{gọt bởi cận}.
+    \end{frame}
+    
+    \begin{frame}
+      Ta chọn $x^2_2=0.36$ từ $(P_2)$
+      \begin{itemize}
+        \item $(P_7)$ cho $z_7=12.1, x^7_1=2.1, x^7_2=0, x^7_3=0.17$, do $z_7<z_4 \rightarrow$ loại.
+        \item $(P_8)$ cho kết quả \textbf{vô nghiệm}.
+      \end{itemize} 
+    Vậy nghiệm tối ưu của bài toán là $x_1=1, x_2=2, x_3=1$ và giá trị tối ưu $z=12.7$.
+    \end{frame}    
 
 \section{Độ phức tạp}
 
