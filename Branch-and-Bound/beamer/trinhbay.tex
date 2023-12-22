@@ -402,10 +402,10 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
-\item Nếu tồn tại $P_i$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
-\item Giả sử $x^i$ là nghiệm tối ưu của bài toán $P_i$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\item Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\item Giả sử $x^i$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
-\item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm của bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $P_i$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm của bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
 \item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
 \item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
 \iffalse
@@ -574,6 +574,17 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \end{frame}
 
 \begin{frame}{Sơ đồ thuật giải}
+\begin{itemize}
+\item Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút.
+\item Ta đặt $z^*$ là giá trị tối ưu tốt nhất và $(x^*,y^*)$ là nghiệm tối ưu tốt nhất của bài toán được đánh dấu.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\textbf{Bước 1. Thiết lập} Đặt $\mathcal{L}:=\{N_0 \}$, $z^*=z_p$ và $(x^*,y^*)=(x,y)$.
+
+\end{frame}
+\begin{frame}{Sơ đồ thuật giải}
 \center
 \begin{figure}
 \begin{tikzpicture}[scale=0.33, every node/.style={scale=0.33}, node distance=4cm]
@@ -582,7 +593,7 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
     \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
     \tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
     \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
-    \tikzstyle{arrow} = [thick,->,>=stealth]
+    \tikzstyle{arrow} = [thick,->,>=stealth,line width=0.5pt]
     % Place nodes
     \node (start) [startstop, xshift=-5cm] {Start};
     \node (b0) [io, right of=start] {b0};
