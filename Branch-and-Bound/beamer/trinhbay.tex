@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary {datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
@@ -58,12 +59,17 @@
 
 \begin{frame}{TÓM TẮT}
 \begin{itemize}
-\item Giới thiệu về 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
+\item Giới thiệu 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
 \begin{itemize}
 \item Tối ưu nguyên hoàn toàn
 \item Tối ưu nguyên bộ phận.
 \end{itemize}
 \item Tập trung vào phương pháp giải bài toán tối ưu nguyên bộ phận thông qua thuật toán nhánh cận.
+\begin{itemize}
+\item Cơ sở lý thuyết.
+\item Sơ đồ thuật toán.
+\end{itemize}
+\item Độ phức tạp của thuật toán.
 \end{itemize}
 \end{frame}
 
@@ -229,7 +235,7 @@
 Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
 \begin{nx} \label{nx}
 \begin{itemize}
-\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b < z_p$ và phương án có thể cải thiện.
+\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}
@@ -247,7 +253,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
             & \left\{\begin{split}
             & -1x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -284,7 +290,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
             & \left\{\begin{split}
             & 2.5x_1 + \frac{15}{4}x_2 \leq 20 \\
             & x_1 + \frac{5}{3}x_2 \leq \frac{50}{3} \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -315,16 +321,17 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
    \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
 \end{frame}
 
-\begin{frame}{Khái niệm và ký hiệu}
+\begin{frame}{Nội dung chính}
 \large
 Ở mục này, chúng ta sẽ làm rõ những ý tưởng sau:
 \begin{itemize}
 \item Định nghĩa cận và xác định cận của bài toán.
-\item Phương pháp xử lý bài toán kèm ví dụ minh hoạ và thuật toán.
+\item Phương pháp xử lý bài toán nhỏ kèm ví dụ minh hoạ.
+\item Sơ đồ thuật giải và các ví dụ minh hoạ cho bài toán lớn.
 \end{itemize}
 \end{frame}
-   
-\begin{frame}{Xác định cận}
+
+\begin{frame}{Phương pháp xác định cận}
 Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
 \begin{dl}\label{cmnguyen}
 \begin{itemize}
@@ -353,11 +360,11 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \end{vd}
 \end{frame}
 
-\begin{frame}{Phương pháp}
+\begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, ký hiệu $x^0_j$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
-\item Nếu nghiệm thu được là $x^0_j$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
+\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
 
@@ -367,13 +374,13 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
     (P_1) \quad & z_1=c^Tx+h^Ty \quad \longrightarrow Max \\
                 & \left\{\begin{split}
                     &Ax+Gy \leq  b \\
-                    &\color{blue} x^0_j \leq \lfloor x^0_j \rfloor , \\
+                    &\color{blue} x_j \leq \lfloor x_j \rfloor , \\
                     &x,y \geq 0.
                 \end{split}\right.    
     \end{split}
 \end{equation}
 \begin{itemize}
-\item Tập $S_1:=S_p \cap \{ (x,y): x^0_j \leq \lfloor x^0_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
+\item Tập $S_1:=S_p \cap \{ (x,y): x_j \leq \lfloor x_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(P_1)$.
 \end{itemize}
 \end{frame}
 
@@ -383,13 +390,28 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
     (P_2) \quad & z_2=c^Tx+h^Ty \quad \longrightarrow Max \\
                 & \left\{\begin{split}
                     &Ax+Gy \leq  b \\
-                    &\color{blue} x^0_j \geq \lceil x^0_j \rceil , \\
+                    &\color{blue} x_j \geq \lceil x_j \rceil , \\
                     &x,y \geq 0.
                 \end{split}\right.    
     \end{split}
 \end{equation}
 \begin{itemize}
-\item Tập $S_2:=S_p \cap \{ (x,y): x^0_j \geq \lceil x^0_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(P_2)$.
+\item Tập $S_2:=S_p \cap \{ (x,y): x_j \geq \lceil x_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(P_2)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Điều kiện nghiệm}
+\begin{itemize}
+\item Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\item Giả sử $x^i$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\begin{itemize}
+\item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
+\iffalse
+Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
+\fi
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -400,7 +422,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
             & \left\{\begin{split}
             & -x_1 + x_2 \leq 2 \\
             & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \text{nguyên} \\
+            &x_1 \geq 0, \\
             &x_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
@@ -408,7 +430,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \end{frame}
 
 \begin{frame}
-    Giải bài toán bằng phương pháp đơn hình thông thường ta được nghiệm $x^0_1 =1.3$, $x^0_2 = 3.3$ và $z_p=14.08$.
+    Giải bài toán bằng phương pháp đơn hình thông thường ta được nghiệm $x_1 =1.3$, $x_2 = 3.3$ và $z_p=14.08$.
     \vspace{1cm}
     \begin{figure}
     \begin{tikzpicture}[scale=.9]
@@ -434,18 +456,18 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 
 %template to copy-paste
 \begin{frame}
-Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
+Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
 \begin{columns}
 \begin{column}{0.5\textwidth}
     \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x_1 + 2.1x_2 \\
+            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
-            &x_2 \geq 0. \\
+            & -x^1_1 + x^1_2 \leq 2 \\
+            & 8x^1_1 + 2x^1_2 \leq 17 \\
+            & \color{blue} x^1_1 \leq 1 \\
+            &x^1_1 \geq 0 \\
+            &x^1_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -453,13 +475,13 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{column}{0.5\textwidth}
    \begin{equation*}
         \begin{split}
-            (P_2) \quad z_2= & 5.5x_1 + 2.1x_2  \\
+            (P_2) \quad z_2= & 5.5x^2_1 + 2.1x^2_2  \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            &x_1 \geq 0, \text{nguyên} \\
-            &x_2 \geq 0. \\
+            & -x^2_1 + x^2_2 \leq 2 \\
+            & 8x^2_1 + 2x^2_2 \leq 17 \\
+            & \color{blue} x^2_1 \geq 2 \\
+            &x^2_1 \geq 0 \\
+            &x^2_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -470,20 +492,20 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{frame}
         \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
+            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \quad \longrightarrow Max \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \leq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
-            &x_2 \geq 0. \\
+            & -x^1_1 + x^1_2 \leq 2 \\
+            & 8x^1_1 + 2x^1_2 \leq 17 \\
+            & \color{blue} x^1_1 \leq 1 \\
+            &x^1_1 \geq 0 \\
+            &x^1_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
 \end{frame}
 
 \begin{frame}
-    Giải bài toán ta được $x^1_1=1, x^1_2=3$ và $z_1=11.8$. \textbf{Bài toán được giải.}
+    Giải bài toán ta được $x^1_1=1, x^1_2=3$ và $z_1=11.8$. Bài toán được giải \textbf{(gọt bởi nghiệm nguyên)}.
     \vspace{1cm}
     \begin{figure}
     \begin{tikzpicture}[scale=.9]
@@ -508,19 +530,19 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \end{frame}
 
 \begin{frame}
-    Tương tự bài toán $(P_2)$ ta được $x^1_1 = 2, x^1_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^1_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
+    Tương tự bài toán $(P_2)$ ta được $x^2_1 = 2, x^2_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^2_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
     \begin{columns}
 \begin{column}{0.5\textwidth}
     \begin{equation*}
         \begin{split}
-            (P_3) \quad z_3= & 5.5x_1 + 2.1x_2 \\
+            (P_3) \quad z_3= & 5.5x^3_1 + 2.1x^3_2 \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            & \color{blue} x_2 \leq 0 \\
-            &x_1 \geq 0, \text{nguyên} \\
-            &x_2 \geq 0. \\
+            & -x^3_1 + x^3_2 \leq 2 \\
+            & 8x^3_1 + 2x^3_2 \leq 17 \\
+            & \color{blue} x^3_1 \geq 2 \\
+            & \color{blue} x^3_2 \leq 0 \\
+            &x^3_1 \geq 0 \\
+            &x^3_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -528,14 +550,14 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 \begin{column}{0.5\textwidth}
    \begin{equation*}
         \begin{split}
-            (P_4) \quad z_4= & 5.5x_1 + 2.1x_2  \\
+            (P_4) \quad z_4= & 5.5x^4_1 + 2.1x^4_2  \\
             & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            & \color{blue} x_1 \geq 2 \\
-            & \color{blue} x_2 \geq 1 \\
-            &x_1 \geq 0, \text{nguyên} \\
-            &x_2 \geq 0. \\
+            & -x^4_1 + x^4_2 \leq 2 \\
+            & 8x^4_1 + 2x^4_2 \leq 17 \\
+            & \color{blue} x^4_1 \geq 2 \\
+            & \color{blue} x^4_2 \geq 1 \\
+            &x^4_1 \geq 0 \\
+            &x^4_2 \geq 0. \\
             \end{split}\right. \\
         \end{split}
     \end{equation*}
@@ -545,12 +567,212 @@ Chọn $x^0_1=1.3$ để cải thiện phương án, ta thu được 2 bài toá
 
 \begin{frame}
     \begin{itemize} 
-    \item Giải bài toán $(P_3)$ ta được $x^2_1=2.125, x^2_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$. 
-    \item Bài toán $(P_4)$ vô nghiệm.
-    \item Vậy phương án tối ưu của bài toán là $x_1=1, x_2=3$ và $z=11.8$.
+    \item Giải bài toán $(P_3)$ ta được $x^3_1=2.125, x^3_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \item Bài toán $(P_4)$ \textbf{vô nghiệm}.
+    \item Vậy phương án tối ưu của bài toán là $x^1_1=1, x^1_2=3$ và $z=11.8$.
 \end{itemize}
-
 \end{frame}
+
+\begin{frame}{Sơ đồ thuật toán}
+\begin{itemize}
+\item Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+\item Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sơ đồ thuật toán}
+\small
+\setlength{\parindent}{4em}
+\noindent \textbf{Bước 1. Thiết lập} \\
+Đặt $\mathcal{L}:=\{N_0 \}$, $z^*=z_p$ và $(x^*,y^*)=(x,y)$. \\
+\noindent \textbf{Bước 2. Kiểm tra} \\
+Nếu $\mathcal{L} = \emptyset$ thì nghiệm tối ưu của bài toán là $(x^*,y^*)$, giá trị \\ tối ưu là $z^*$ và bài toán được giải. \\
+Nếu $\mathcal{L} \neq \emptyset$, chuyển sang bước 3. \\ 
+\noindent \textbf{Bước 3. Chọn nút} \\
+Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sau đó chuyển sang \\ bước 4. \\ 
+\noindent \textbf{Bước 4. Xác định cận} \\ 
+Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\ 
+\noindent \textbf{Bước 5. Gọt nghiệm} \\
+Nếu tồn tại $x^i \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
+Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^i,y^i) = (x^*,y^*)$ và quay lại bước 2.
+\end{frame}    
+
+\begin{frame}{Sơ đồ thuật toán}
+\center
+\begin{figure}
+\begin{tikzpicture}[scale=0.33, every node/.style={scale=0.33}, node distance=4cm]
+% Define styles
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=green!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
+% Place nodes
+\node (start) [startstop, xshift=-5cm] {Bắt đầu};
+\node (b0) [io, right of=start] {$\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
+\node (b1) [decision, right of=b0] {$\mathcal{L} = \emptyset$?};
+\node (b2) [process, right of=b1] {Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
+\node (b3) [process, right of=b2] {Giải $(P_i)$};
+\node (b4) [decision, right of=b3] {Vô nghiệm?};
+\node (b5) [decision, right of=b4] {$\exists x^i \notin Z^n_+$?};
+\node (b6) [io, above of=b5] {$z_i = z^*$, $(x^i,y^i) = (x,y)$};
+\node (b7) [io, right of=b5] {Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
+\node (kl) [process, below of=b1] {bài toán \\ được giải};
+\node (stop) [startstop, right of=b7] {Kết thúc};
+% Draw arrows
+\draw [arrow] (start) -- (b0);
+\draw [arrow] (b0) -- (b1);
+\draw [arrow] (b1) -- node[anchor=south] {no} (b2);
+\draw [arrow] (b2) -- (b3);
+\draw [arrow] (b3) -- (b4);
+\draw [arrow] (b4) -- node[anchor=south] {no} (b5);
+\draw [arrow] (b5) -- node[anchor=west] {no} (b6);
+\draw [arrow] (b5) -- node[anchor=south] {yes} (b7);
+\draw [arrow] (b4) --node[anchor=west] {yes} (15,2) -- (3,2) -- (b1);
+\draw [arrow] (b6) -| (b1);
+\draw [arrow] (b7) -- (23,6) -- (3,6) -- (b1);
+\draw [arrow] (b7) -- (stop);
+\draw [arrow] (b1) -- node[anchor=west] {yes} (kl);
+\draw [arrow] (kl) -| (stop);
+\end{tikzpicture}
+\caption{Lưu đồ giải thuật của thuật toán nhánh cận.}
+\end{figure}
+\end{frame}   
+
+\begin{frame}{Ví dụ minh hoạ}
+    \begin{equation*}
+    \begin{split}
+    (P) \quad z_p= & 5.5x_1 + 2.1x_2 + 3x_3 \quad \longrightarrow Max \\
+    & \left\{\begin{split}
+    & -x_1 + x_2 + x_3 \leq 2 \\
+    & 8x_1 + 2x_2 + x_3\leq 17 \\
+    & 9x_1 + x_2 + 6x_3 \leq 20 \\
+    &x_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+    \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    Giải bài toán $(P)$ ta được $x_1=1.38, x_2=2.55, x_3=0.83$. \\
+    Ta chọn biến $x_1$ để phân nhánh. ($x_2, x_3$ tương tự)
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^1_1 \leq 1$ \\ 
+    \begin{equation*}
+    \begin{split}
+      (P_1) \quad z_p= & 5.5x^1_1 + 2.1x^1_2 + 3x^1_3 \quad \longrightarrow Max \\
+      & \left\{\begin{split}
+      & -x^1_1 + x^1_2 + x^1_3 \leq 2 \\
+      & 8x^1_1 + 2x^1_2 + x^1_3\leq 17 \\
+      & 9x^1_1 + x^1_2 + 6x^1_3 \leq 20 \\
+      & x^1_1 \leq 1 \\
+      &x^1_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+      \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    $\rightarrow z_1=13.24, x^1_1=1, x^1_2=1.4, x^1_3=1.6$
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^2_1 \geq 2$ \\
+    \begin{equation*}
+      \begin{split}
+        (P_2) \quad z_p= & 5.5x^2_1 + 2.1x^2_2 + 3x^2_3 \quad \longrightarrow Max \\
+        & \left\{\begin{split}
+        & -x^2_1 + x^2_2 + x^2_3 \leq 2 \\
+        & 8x^2_1 + 2x^2_2 + x^2_3\leq 17 \\
+        & 9x^2_1 + x^2_2 + 6x^2_3 \leq 20 \\
+        & x^2_1 \geq 2 \\
+        &x^2_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+        \end{split}\right. \\
+    \end{split}
+    \end{equation*}
+    $\rightarrow z_2=12.58, x^2_1=2, x^2_2=0.36, x^2_3=0.27$
+    \end{frame}
+    
+    \begin{frame}
+      Ta tiếp tục chọn $x^1_2=1.4$ từ $(P_1)$. Với $x^3_2 \leq 1$
+    \begin{equation*}
+      \begin{split}
+          (P_3) \quad z_p= & 5.5x^3_1 + 2.1x^3_2 + 3x^3_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^3_1 + x^3_2 + x^3_3 \leq 2 \\
+          & 8x^3_1 + 2x^3_2 + x^3_3\leq 17 \\
+          & 9x^3_1 + x^3_2 + 6x^3_3 \leq 20 \\
+          & x^3_1 \leq 1 \\
+          & x^3_2 \leq 1 \\
+          &x^3_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_3=12.6, x^3_1=1, x^3_2=1, x^3_3=1.66$
+    \end{frame}
+    
+    \begin{frame}
+     Với $x^4_2 \geq 2$
+    \begin{equation*}
+      \begin{split}
+          (P_4) \quad z_p= & 5.5x^4_1 + 2.1x^4_2 + 3x^4_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^4_1 + x^4_2 + x^4_3 \leq 2 \\
+          & 8x^4_1 + 2x^4_2 + x^4_3\leq 17 \\
+          & 9x^4_1 + x^4_2 + 6x^4_3 \leq 20 \\
+          & x^4_1 \leq 1 \\
+          & x^4_2 \geq 2 \\
+          &x^4_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_4=12.7, x^4_1=1, x^4_2=2, x^4_3=1 \rightarrow$ \textbf{gọt bởi nghiệm nguyên}.
+    \end{frame}
+    
+    \begin{frame}
+    Ta chọn $x^3_3=1.66$ từ $(P_3)$. Với $x^5_3 \leq 1$.
+    \begin{equation*}
+      \begin{split}
+          (P_5) \quad z_p= & 5.5x^5_1 + 2.1x^5_2 + 3x^5_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^5_1 + x^5_2 + x^5_3 \leq 2 \\
+          & 8x^5_1 + 2x^5_2 + x^5_3\leq 17 \\
+          & 9x^5_1 + x^5_2 + 6x^5_3 \leq 20 \\
+          & x^5_1 \leq 1 \\
+          & x^5_2 \leq 1 \\
+          & x^5_3 \leq 1 \\
+          &x^5_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_5=10.6, x^5_1=1, x^5_2=1, x^5_3=1 \rightarrow$ gọt bởi nghiệm nguyên nhưng $z_5<z_4 \rightarrow$ loại.
+    \end{frame}
+    
+    \begin{frame}
+    Với $x^6_3 \geq 2$.
+    \begin{equation*}
+      \begin{split}
+          (P_6) \quad z_p= & 5.5x^6_1 + 2.1x^6_2 + 3x^6_3 \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+          & -x^6_1 + x^6_2 + x^6_3 \leq 2 \\
+          & 8x^6_1 + 2x^6_2 + x^6_3\leq 17 \\
+          & 9x^6_1 + x^6_2 + 6x^6_3 \leq 20 \\
+          & x^6_1 \leq 1 \\
+          & x^6_2 \leq 1 \\
+          & x^6_3 \geq 2 \\
+          &x^6_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          \end{split}\right. \\
+      \end{split}
+    \end{equation*}
+    $\rightarrow z_6=12.08, x^6_1=0.8, x^6_2=0.8, x^6_3=2 \rightarrow$ \textbf{gọt bởi cận}.
+    \end{frame}
+    
+    \begin{frame}
+      Ta chọn $x^2_2=0.36$ từ $(P_2)$
+      \begin{itemize}
+        \item $(P_7)$ cho $z_7=12.1, x^7_1=2.1, x^7_2=0, x^7_3=0.17$, do $z_7<z_4 \rightarrow$ loại.
+        \item $(P_8)$ cho kết quả \textbf{vô nghiệm}.
+      \end{itemize} 
+    Vậy nghiệm tối ưu của bài toán là $x_1=1, x_2=2, x_3=1$ và giá trị tối ưu $z=12.7$.
+    \end{frame}    
+
+\section{Độ phức tạp}
 
 \begin{frame}
 \end{frame}
