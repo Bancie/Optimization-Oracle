@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Giới thiệu}{4}{0}{1}
+\beamer@sectionintoc {2}{Mục tiêu}{11}{0}{2}
+\beamer@sectionintoc {3}{Thuật toán nhánh cận}{16}{0}{3}
+\beamer@sectionintoc {4}{Độ phức tạp}{42}{0}{4}
